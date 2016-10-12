@@ -1,6 +1,6 @@
-### Poject Name: PDFMake ###
+# Poject Name: PDFMake #
 
-#Brief Scription#
+##Brief Scription##
 
 This is a javascript library to enable client/server side based pdf printing directly from the browser.
 
@@ -10,13 +10,13 @@ It is a very easy to use tool because it allows its users to use fully declarati
 
 We see the usecase of pdfmake for other 3rd party softwares to easily export documents in .pdf files rather than use it for personal usage. One example of 3rd party programs using pdfmake is the novel writing tool called Novlr.org.
 
-#Process Development#
+##Process Development##
 
 The project team used an Agile process development with a continuous development/continuous integration approach. They used tools like "travis-ci". They work on a sprint basis release schedule as they release one new version every 20 days / 1 month. This proves that they have to be constantly testing and integrating otherwise this would not have been possible.
 
 Besides, knowing that they use travis-ci to validate the versions, we can infer that they use some kind of coding standards.
 
-#Critics, Opinions and Alternatives#
+##Critics, Opinions and Alternatives##
 
 We believe this is the best approach for an open source kind of project because at every moment the tool needs to be ready to receive more functionalities from other contributors without messing up with the existing ones and this is not possible with a classical development process where a new functionality implies going back to beginning and testing everything again.
 
