@@ -11,5 +11,5 @@ We see the usecase and value of pdfmake for other 3rd party softwares to easily 
 https://github.com/joaopedrofump/pdfmake-1/blob/master/ESOF-Docs/firstassignment.md
 
 ##Assignments##
-**2. Assignment: Development process**
+**2. Assignment: Requirements elicitation**
 https://github.com/joaopedrofump/pdfmake-1/blob/master/ESOF-Docs/secondassignment.md
