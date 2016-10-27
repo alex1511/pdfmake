@@ -6,6 +6,9 @@ The purpose of RE is basically to bridge the business and the software world & l
 
 #d) Domain Model #
 
+![Domain Model](https://github.com/joaopedrofump/pdfmake-1/blob/master/ESOF-Docs/Pdfmake_domainmodel.jpg)
+
+
 In the domain model we defined 4 classes:
 
 * HTML Document
