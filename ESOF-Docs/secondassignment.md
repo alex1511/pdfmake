@@ -6,12 +6,12 @@ The purpose of RE is basically to bridge the business and the software world & l
 
 #d) Domain Model #
 
-In the domain model we defined we have 4 classes:
+In the domain model we defined 4 classes:
 
-**HTML Document**
-**Style**
-**Printer**
-**PDF**
+*HTML Document
+*Style
+*Printer
+*PDF
 
 The HTML document is the starting point, it all starts with an HTML web page. In the end, the purpose of the library is to make possible to print web pages directly from the browser making use of the functions of the library. Therefore, the HTML class has its attributes like paragraphs, tables, headers, divs, etc.
 
