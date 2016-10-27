@@ -22,7 +22,7 @@ In the domain model we defined 4 classes:
 
 The HTML document is the starting point, it all starts with an HTML web page. In the end, the purpose of the library is to make possible to print web pages directly from the browser making use of the functions of the library. Therefore, the HTML class has its attributes like paragraphs, tables, headers, divs, etc.
 
-The second class is the printer, the name we gave to define the JS library which provide functions to print HTML documents in PDF format. The attributes of the printer are all the functions at the core of the library which grabs the HTML parts, the styles defined and transform the HTML document in a PDF document. The printer can generate the PDF in three different ways: open it directly in the browser, send it the physical printer and generate a file to be downloaded.
+The second class is the printer, the name we gave to define the JS library which provide functions to print HTML documents in PDF format. The attributes of the printer are all the functions at the core of the library which grabs the HTML parts, the styles defined and transform the HTML document in a PDF document. The printer can generate the PDF in three different ways: open it directly in the browser, send it to the physical printer and generate a file to be downloaded.
 
 The third class is the STYLE class. The style is related to the printer in a sense that the printer uses a certain number of styles to generate the PDF from the HTML. For instance, we can relate a header with a specific style, a paragraph to another one. These styles are dictionaries that can map HTML elements to styles (a little bit like CSS does).
 
