@@ -9,3 +9,7 @@ We see the usecase and value of pdfmake for other 3rd party softwares to easily 
 ##Assignments##
 **1. Assignment: Development process**
 https://github.com/joaopedrofump/pdfmake-1/blob/master/ESOF-Docs/firstassignment.md
+
+##Assignments##
+**1. Assignment: Development process**
+https://github.com/joaopedrofump/pdfmake-1/blob/master/ESOF-Docs/secondassignment.md
