@@ -1,22 +1,22 @@
-##2. Assignment: Requirements Elicitation##
+#2. Assignment: Requirements Elicitation#
 
-#a) Requirements: Introduction, Purpose/Scope, and Description#
-Requirement engineering (RE) is the process of studying user needs, which are at first mostly vaguely defined, and transforming them into a clear statement and understanding of a task, which must be fulfilled by the to be developed software, in order to fully satisfy the specific user need.
-The purpose of RE is basically to bridge the business and the software world & language and structuring the tasks to be done in the whole software development process.
+##a) Requirements: Introduction, Purpose/Scope, and Description##
+Requirement engineering (RE) is the process of studying user needs, which are at first mostly vaguely defined, and transforming them into a clear statement and understanding of a task, which must be fulfilled by the to be developed software, in order to fully satisfy the specific user need. So the purpose of RE is basically to bridge the business and the software world & language and to structure the tasks that have to be done during the development process. This is done by transforming the elicted business and user requirements in to specific system and software requirements.
 
+RE in open source projects differ in some ways from the classical software projects, in which a face to face communication between a client and the developers exists, since there is no specific client. Therefore we assume the original developers of pdfmake saw or had needs for a solution like pdfmake and "elicted" the requirements by theirself and still do. Further functionality requests and issues are posted in the Github 'issues' forum of the project, which can then be taken care of by any willing contributor. Through labels the requests then can be flagged as 'answered', 'won't fix' etc. to manage the requirements.
 
-#b) Specific Requirements and Features (Functional and Non-Functional requirements) #
+##b) Specific Requirements and Features (Functional and Non-Functional requirements) ##
 
-##Functional Requirements##
+###Functional Requirements###
 Functional requirement define what a sysytem is supposed to do like calculations, technical details, data manipulation and processing and other specific functionalities.
 
-When it comes to functional requirements, it's key that the system is able to do a number of functions related to created pdf file, such as:
+When it comes to functional requirements, it's key that the system is able to do a number of functions related to creating a pdf file, such as:
 * being able to open it in the browser in a new tab
-* print it and download it onto the user's PC.
-The system should create an html doc out of the user's input or out of a text file.
-It needs to allow a certain level of customisation, using user-defined styles.
+* print it and download it onto the user's PC
+* it should create an html doc out of the user's input or out of a text file
+* allow the user to use user-defined styles
 
-In terms of customisation, it needs to:  
+In terms of customization, it needs to:  
 * allow the printing of page numbers
 * allow the printing of custom page breaks
 * allow the printing of static/dynamic content
@@ -30,19 +30,21 @@ In terms of customisation, it needs to:
 * allow the management of document styles
 * allow adjustments to be made to the page's dimensions and orientation.
 
-##Non-Functional Requirements##
+###Non-Functional Requirements###
 Non-functional requirements define how the system is supposed to be, along with its qualities.
 
-In pdfmake the system should be client-sided in its implementation. The printing function should be auto-triggering.
-The user should be able to create PDFs using a simplified, object oriented language, which will be converted into html before it is printed.
-The project should be open source, and allow for many new features to be continuously implemented by various members.
-Finally, it should be easy for other developers to implement this system in their own projects.
+* the system should be client-sided in its implementation
+* the system should automatically take care of line wrapping (breaking lines when at the border of the document / table)
+* the printing function should be auto-triggering
+* the user should be able to create PDFs using a simplified, object oriented language, which will be converted into html before it is printed
+* the project should be open source, and allow for many new features to be continuously implemented by various members
+* it should be easy for other developers to implement this system in their own projects
 
-#c) Use Cases #
+##c) Use Cases ##
 
 ![Use Cases](https://github.com/joaopedrofump/pdfmake-1/blob/master/ESOF-Docs/Pdfmake_usecase.jpg)
 
-#d) Domain Model #
+##d) Domain Model ##
 
 ![Domain Model](https://github.com/joaopedrofump/pdfmake-1/blob/master/ESOF-Docs/Pdfmake_domainmodel.jpg)
 
@@ -54,10 +56,10 @@ In the domain model we defined 4 classes:
 * Printer
 * PDF
 
-The HTML document is the starting point, it all starts with an HTML web page. In the end, the purpose of the library is to make possible to print web pages directly from the browser making use of the functions of the library. Therefore, the HTML class has its attributes like paragraphs, tables, headers, divs, etc.
+The **HTML document** class is the starting point, it all starts with an HTML web page. In the end, the purpose of pdfmake is to enable printing web pages directly from the browser making use of the functions of pdfmake. Therefore, the HTML class has  attributes like paragraphs, tables, headers, divs, etc.
 
-The second class is the printer, the name we gave to define the JS library which provide functions to print HTML documents in PDF format. The attributes of the printer are all the functions at the core of the library which grabs the HTML parts, the styles defined and transform the HTML document in a PDF document. The printer can generate the PDF in three different ways: open it directly in the browser, send it to the physical printer and generate a file to be downloaded.
+The second class is the **Printer**, the name we gave to define the 'JS library' which provides those functions to print HTML documents in PDF format. The attributes of the printer are all the functions at the core of the library which grabs the HTML parts, the styles defined and transform the HTML document in a PDF document. The printer can generate the PDF in three different ways: open it directly in the browser, send it to the physical printer and generate a file to be downloaded.
 
-The third class is the STYLE class. The style is related to the printer in a sense that the printer uses a certain number of styles to generate the PDF from the HTML. For instance, we can relate a header with a specific style, a paragraph to another one. These styles are dictionaries that can map HTML elements to styles (a little bit like CSS does).
+The third class is the **Style** class. The style is related to the printer in a sense that the printer uses a certain number of styles to generate the PDF from the HTML. For instance, we can relate a header with a specific style, a paragraph to another one. These styles are dictionaries that can map HTML elements to styles (a little bit like CSS does).
 
-The last class is the PDF file. This class is the final result or the output of the whole system. It's related with the printer in a way that it is generated by it. The attributes of the class are all the attributes defined in the STYLE class and HTML class because in the end it comes from these two classes.
+The last class is the **PDF file**. Objects of this class the final result or the output of the whole system. It's related with the printer in a way that it is generated by it. The attributes of the class are all the attributes defined in the STYLE class and HTML class because in the end it comes from these two classes.
