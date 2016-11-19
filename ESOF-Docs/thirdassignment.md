@@ -30,6 +30,10 @@ But from our general understanding of PDFmake, we would suggest some variation o
 ![Logical View](https://github.com/joaopedrofump/pdfmake-1/blob/stefan/ESOF-Docs/PackageDiagram.jpg)
 
 
+##Development View##
+![Development View](https://github.com/joaopedrofump/pdfmake-1/blob/master/ESOF-Docs/Development%20view.PNG)
+
+
 ##Process View##
 
 ![Process View](https://github.com/joaopedrofump/pdfmake-1/blob/master/ESOF-Docs/ProcessViewFinal.png)
