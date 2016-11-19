@@ -19,9 +19,10 @@ It is impossible to describe the system architecture of a software in one single
 
 ##Architectual Pattern of PDFmake##
 
-Architectual Patterns are specific patterns that are often used when designing a system, that make solving recurring problems simpler.
-In our best understanding, PDFmake uses a Client-Server pattern.
-Since the project is a library, where its functions are kept in a server, when a client wants to use those functions they need to first access the server. Afterwards, the server returns a PDF to the client (via printer, download or in-browser), therefore establishing a necessary client-server relationship.
+Architectual patterns are specific patterns that have been proven to be successful architectual designs for common software solutions. Therefore variations of them are commonly used.
+Looking at the src folder of PDFmake, we couldn't figure out the usage of an specific pattern, mostly due to a lack of documentation in most .js files. Furthermore PDFmake is not a typical software, it is more a JavaScript libary to enable .pdf printing (see readme.md & firstassignment.md), and is therefore hard to fit in the common software patterns.
+
+But from our general understanding of PDFmake, we would suggest some variation of the 'Pipes and Filters' architecture. PDFmake generally processes data from an input, a HTML document with JavaScript commands and document data (like text, tables and styles), into an output, a .pdf file. This onedirectional, uninteractive data transformation process with stable datatypes (HTML -> PDF) encourages the usage of a 'Pipe and Filters' pattern, since it is easy to understand and adding further transformation functionalities is easy.
 
 
 ##Logical View##
