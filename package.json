@@ -4,7 +4,6 @@
   "description": "Client/server side PDF printing in pure JavaScript",
   "main": "src/printer.js",
   "directories": {
-    "example": "examples",
     "test": "tests"
   },
   "dependencies": {
@@ -22,8 +21,7 @@
     "grunt-jsdoc": "^1.1.0",
     "grunt-mocha-cov": "^0.4.0",
     "grunt-text-replace": "^0.4.0",
-    "gulp": "^3.9.1",
-    "gulp-istanbul": "^1.1.1",
+    "gulp": "^3.8.11",
     "gulp-jshint": "^2.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.3",
