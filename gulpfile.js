@@ -9,6 +9,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var replace = require('gulp-replace');
 var mocha = require('gulp-spawn-mocha');
 var jshint = require('gulp-jshint');
+var istanbul = require('gulp-istanbul');
 
 var uglifyOptions = {
 	preserveComments: 'some',
@@ -40,12 +41,21 @@ function reportWebPackErrors(err, stats) {
   }));
 }
 
-gulp.task('test', ['prepareTestEnv'], function(cb) {
+gulp.task('pre-test', function () {
+  return gulp.src(['src/**/*.js'])
+    // Covering files
+    .pipe(istanbul({includeUntested: true}))
+    // Force `require` to return covered files
+    .pipe(istanbul.hookRequire());
+});
+
+gulp.task('test', ['prepareTestEnv', 'pre-test'],function(cb) {
 	return gulp.src(['test-env/tests/**/*.js'])
 		.pipe(mocha({
 			reporter: 'spec',
 			'check-leaks': true
-		}));
+		}))
+		.pipe(istanbul.writeReports());
 });
 
 gulp.task('prepareTestEnv', ['copy-src-with-exposed-test-methods', 'copy-tests']);

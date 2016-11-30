@@ -1,0 +1,1193 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for tests/pageElementWriter.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">tests/</a> pageElementWriter.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.24% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/241</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.26% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/239</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >var assert = require('assert');</span>
+<span class="cstat-no" title="statement not covered" >var sinon = require('sinon');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >var DocumentContext = require('../src/documentContext');</span>
+<span class="cstat-no" title="statement not covered" >var PageElementWriter = require('../src/pageElementWriter');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >describe('PageElementWriter', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >	var pew, ctx, tracker, pageSize;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var DOCUMENT_WIDTH = 600;</span>
+<span class="cstat-no" title="statement not covered" >	var DOCUMENT_HEIGHT = 1100;</span>
+<span class="cstat-no" title="statement not covered" >	var DOCUMENT_ORIENTATION = 'portrait';</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var MARGINS = {</span>
+		left: 40,
+		right: 60,
+		top: 30,
+		bottom: 70
+	};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	AVAILABLE_HEIGHT = 1000;</span>
+<span class="cstat-no" title="statement not covered" >	AVAILABLE_WIDTH = 500;</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function buildLine(height, alignment, x, y) {</span>
+<span class="cstat-no" title="statement not covered" >		return {</span>
+			getHeight: <span class="fstat-no" title="function not covered" >function() {</span> <span class="cstat-no" title="statement not covered" >return height; </span>},
+			getWidth: <span class="fstat-no" title="function not covered" >function() {</span> <span class="cstat-no" title="statement not covered" >return 60; </span>},
+			inlines: [
+				{
+					alignment: alignment,
+					x: 0,
+				},
+				{
+					x: 30,
+				},
+				{
+					x: 50
+				}
+			],
+			x: x,
+			y: y
+		};
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function addOneTenthLines(count) {</span>
+<span class="cstat-no" title="statement not covered" >    var lastPosition;</span>
+<span class="cstat-no" title="statement not covered" >		for(var i = 0; i &lt; count; i++) {</span>
+<span class="cstat-no" title="statement not covered" >			var line = buildLine(AVAILABLE_HEIGHT/10);</span>
+<span class="cstat-no" title="statement not covered" >			lastPosition = pew.addLine(line);</span>
+		}
+<span class="cstat-no" title="statement not covered" >    return lastPosition;</span>
+	}
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function createRepeatable(marker, height) {</span>
+<span class="cstat-no" title="statement not covered" >		var rep = { items: [] };</span>
+<span class="cstat-no" title="statement not covered" >		rep.height = height;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var repLine = buildLine(height);</span>
+<span class="cstat-no" title="statement not covered" >		repLine.marker = marker;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		rep.items.push({</span>
+            type: 'line',
+            item: repLine
+        });
+<span class="cstat-no" title="statement not covered" >		return rep;</span>
+	}
+<span class="cstat-no" title="statement not covered" >	beforeEach(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		pageSize = {width: DOCUMENT_WIDTH, height: DOCUMENT_HEIGHT, orientation: DOCUMENT_ORIENTATION};</span>
+<span class="cstat-no" title="statement not covered" >    ctx = new DocumentContext(pageSize, MARGINS);</span>
+<span class="cstat-no" title="statement not covered" >		tracker = { emit: sinon.spy() };</span>
+<span class="cstat-no" title="statement not covered" >		pew = new PageElementWriter(ctx, tracker);</span>
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	describe('addLine', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		it('should add new lines if there\'s enough space left', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			var position = addOneTenthLines(10);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 1);</span>
+<span class="cstat-no" title="statement not covered" >			assert.deepEqual(position, {pageNumber:1,left:MARGINS.left, top: (9/10 * AVAILABLE_HEIGHT) + MARGINS.top, verticalRatio: 0.9, horizontalRatio: 0, pageOrientation: 'portrait', pageInnerHeight:1000, pageInnerWidth:500});</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should add new pages if there\'s not enough space left', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			var position = addOneTenthLines(11);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 2);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[0].items.length, 10);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items.length, 1);</span>
+<span class="cstat-no" title="statement not covered" >      assert.deepEqual(position, {pageNumber:2,left: MARGINS.left, top: MARGINS.top, verticalRatio: 0, horizontalRatio: 0, pageOrientation: 'portrait', pageInnerHeight:1000, pageInnerWidth:500});</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should subtract line height from availableHeight when adding a line and update current y position', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			pew.addLine(buildLine(40));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.y, MARGINS.top + 40);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.availableHeight, AVAILABLE_HEIGHT - 40);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should add repeatable fragments if they exist and a new page is created before adding the line', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(10);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			var rep = createRepeatable('rep', 30);</span>
+<span class="cstat-no" title="statement not covered" >			pew.repeatables.push(rep);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			var anotherLine = buildLine(20);</span>
+<span class="cstat-no" title="statement not covered" >			anotherLine.marker = 'another';</span>
+<span class="cstat-no" title="statement not covered" >			pew.addLine(anotherLine);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 2);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[0].item.marker, 'rep');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[1].item.marker, 'another');</span>
+		});
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	describe('beginUnbreakableBlock', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		it('should begin a new transaction only once', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			assert(pew.transactionLevel === 0);</span>
+<span class="cstat-no" title="statement not covered" >			pew.beginUnbreakableBlock();</span>
+<span class="cstat-no" title="statement not covered" >			var transactionCtx = pew.transactionContext;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pew.beginUnbreakableBlock();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(transactionCtx, pew.transactionContext);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should make all further calls to addLine add lines to the transaction context instead of the page', <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >			pew.beginUnbreakableBlock();</span>
+<span class="cstat-no" title="statement not covered" >			pew.addLine(buildLine(30));</span>
+<span class="cstat-no" title="statement not covered" >			pew.addLine(buildLine(30));</span>
+<span class="cstat-no" title="statement not covered" >			var uCtx = pew.writer.context;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 1);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[0].items.length, 0);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(uCtx.pages.length, 1);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(uCtx.pages[0].items.length, 2);</span>
+		});
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	describe('commitUnbreakableBlock', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		it('should commit transaction if it was called exactly the same number of time as beginUnbreakableBlock', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			pew.beginUnbreakableBlock();</span>
+<span class="cstat-no" title="statement not covered" >			pew.beginUnbreakableBlock();</span>
+<span class="cstat-no" title="statement not covered" >			pew.addLine(buildLine(30));</span>
+<span class="cstat-no" title="statement not covered" >			pew.commitUnbreakableBlock();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 1);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[0].items.length, 0);</span>
+<span class="cstat-no" title="statement not covered" >			pew.commitUnbreakableBlock();</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[0].items.length, 1);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should copy all elements to the current page if there\'s enough space for the whole block', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			pew.addLine(buildLine(30));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pew.beginUnbreakableBlock();</span>
+<span class="cstat-no" title="statement not covered" >			pew.addLine(buildLine(30));</span>
+<span class="cstat-no" title="statement not covered" >			pew.addLine(buildLine(30));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[0].items.length, 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pew.commitUnbreakableBlock();</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[0].items.length, 3);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should add a new page and copy elements there if there\'s not enough space on the current page', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(8);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pew.beginUnbreakableBlock();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(3);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pew.commitUnbreakableBlock();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 2);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[0].items.length, 8);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items.length, 3);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should move elements to the top of the page if they are added to a new page', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(8);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pew.beginUnbreakableBlock();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(3);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pew.commitUnbreakableBlock();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[0].item.x, MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[0].item.y, MARGINS.top);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[1].item.x, MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[1].item.y, MARGINS.top + AVAILABLE_HEIGHT/10);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should add lines below any repeatable fragments if they exist and a new page is created', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(10);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			var rep = createRepeatable('rep', 50);</span>
+<span class="cstat-no" title="statement not covered" >			pew.repeatables.push(rep);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			var anotherLine = buildLine(20);</span>
+<span class="cstat-no" title="statement not covered" >			anotherLine.marker = 'another';</span>
+<span class="cstat-no" title="statement not covered" >			pew.addLine(anotherLine);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 2);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[0].item.marker, 'rep');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[1].item.marker, 'another');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[1].item.x, MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[1].item.y, MARGINS.top + 50);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should make all further calls to addLine add lines again to the page when transaction finishes', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			pew.beginUnbreakableBlock();</span>
+<span class="cstat-no" title="statement not covered" >			pew.commitUnbreakableBlock();</span>
+<span class="cstat-no" title="statement not covered" >			pew.addLine(buildLine(30));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 1);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[0].items.length, 1);</span>
+		});
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	describe('currentBlockToRepeatable', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		it('should return a copy of all elements from unbreakableBlock', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			pew.beginUnbreakableBlock();</span>
+<span class="cstat-no" title="statement not covered" >			pew.addLine(buildLine(30));</span>
+<span class="cstat-no" title="statement not covered" >			pew.addLine(buildLine(30));</span>
+<span class="cstat-no" title="statement not covered" >			var rep = pew.currentBlockToRepeatable();</span>
+<span class="cstat-no" title="statement not covered" >			pew.pushToRepeatables(rep);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(rep.items.length, 2);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pew.addLine(buildLine(30));</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(rep.items.length, 2);</span>
+		});
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	describe('creating a new page', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		it('should add a repeatable fragment to the top', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(6);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pew.beginUnbreakableBlock();</span>
+<span class="cstat-no" title="statement not covered" >			var uCtx = pew.writer.context;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(3);</span>
+<span class="cstat-no" title="statement not covered" >			uCtx.pages[0].items.forEach(<span class="fstat-no" title="function not covered" >function(item) {</span> <span class="cstat-no" title="statement not covered" >item.item.marker = 'rep'; </span>});</span>
+<span class="cstat-no" title="statement not covered" >			var rep = pew.currentBlockToRepeatable();</span>
+<span class="cstat-no" title="statement not covered" >			pew.pushToRepeatables(rep);</span>
+<span class="cstat-no" title="statement not covered" >			pew.commitUnbreakableBlock();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(3);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 2);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[0].items.length, 10);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[0].items[6].item.marker, 'rep');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[0].items[7].item.marker, 'rep');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[0].items[8].item.marker, 'rep');</span>
+<span class="cstat-no" title="statement not covered" >			assert(!ctx.pages[0].items[9].item.marker);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[0].item.marker, 'rep');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[1].item.marker, 'rep');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[2].item.marker, 'rep');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[2].item.y, MARGINS.top + 2 * AVAILABLE_HEIGHT/10);</span>
+<span class="cstat-no" title="statement not covered" >			assert(!ctx.pages[1].items[3].item.marker);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[3].item.y, ctx.pages[1].items[2].item.y + AVAILABLE_HEIGHT/10);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should reserve space for repeatable fragment to the top when reusing page', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(6);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pew.beginUnbreakableBlock();</span>
+<span class="cstat-no" title="statement not covered" >			var uCtx = pew.writer.context;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(3);</span>
+<span class="cstat-no" title="statement not covered" >			uCtx.pages[0].items.forEach(<span class="fstat-no" title="function not covered" >function(item) {</span> <span class="cstat-no" title="statement not covered" >item.item.marker = 'rep'; </span>});</span>
+<span class="cstat-no" title="statement not covered" >			var rep = pew.currentBlockToRepeatable();</span>
+<span class="cstat-no" title="statement not covered" >			pew.pushToRepeatables(rep);</span>
+<span class="cstat-no" title="statement not covered" >			pew.commitUnbreakableBlock();</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      ctx.pages.push({items: [], pageSize: pageSize});</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(2);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 2);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[0].item.y, MARGINS.top + 3 * AVAILABLE_HEIGHT/10);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should add repeatable fragments in the same order they have been added to the repeatable fragments collection', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(9);</span>
+<span class="cstat-no" title="statement not covered" >			pew.repeatables.push(createRepeatable('rep1', 50));</span>
+<span class="cstat-no" title="statement not covered" >			pew.repeatables.push(createRepeatable('rep2', 60));</span>
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(2);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 2);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items.length, 3);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[0].item.marker, 'rep1');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[0].item.y, MARGINS.top);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[1].item.marker, 'rep2');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[1].item.y, MARGINS.top + 50);</span>
+<span class="cstat-no" title="statement not covered" >			assert(!ctx.pages[1].items[2].item.marker);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages[1].items[2].item.y, MARGINS.top + 50 + 60);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should switch width and height if page changes from portrait to landscape', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(6);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.getCurrentPage().pageSize.width, DOCUMENT_WIDTH);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.getCurrentPage().pageSize.height, DOCUMENT_HEIGHT);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.getCurrentPage().pageSize.orientation, DOCUMENT_ORIENTATION);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pew.moveToNextPage('landscape');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 2);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.getCurrentPage().pageSize.width, DOCUMENT_HEIGHT);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.getCurrentPage().pageSize.height, DOCUMENT_WIDTH);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.getCurrentPage().pageSize.orientation, 'landscape');</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should switch width and height if page changes from landscape to portrait', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			ctx.getCurrentPage().pageSize.orientation = 'landscape';</span>
+<span class="cstat-no" title="statement not covered" >			ctx.getCurrentPage().pageSize.width = DOCUMENT_WIDTH;</span>
+<span class="cstat-no" title="statement not covered" >			ctx.getCurrentPage().pageSize.height = DOCUMENT_HEIGHT;</span>
+			
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(6);</span>
+<span class="cstat-no" title="statement not covered" >			pew.moveToNextPage('portrait');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 2);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.getCurrentPage().pageSize.width, DOCUMENT_HEIGHT);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.getCurrentPage().pageSize.height, DOCUMENT_WIDTH);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.getCurrentPage().pageSize.orientation, 'portrait');</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should not switch width and height if page changes from landscape to landscape', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			ctx.pageOrientation = undefined;</span>
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(6);</span>
+<span class="cstat-no" title="statement not covered" >			pew.moveToNextPage('landscape');</span>
+<span class="cstat-no" title="statement not covered" >			pew.moveToNextPage('landscape');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 3);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.getCurrentPage().pageSize.width, DOCUMENT_HEIGHT);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.getCurrentPage().pageSize.height, DOCUMENT_WIDTH);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.getCurrentPage().pageSize.orientation, 'landscape');</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should create new page', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(1);</span>
+<span class="cstat-no" title="statement not covered" >			pew.moveToNextPage();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.pages.length, 2);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.y, MARGINS.top);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.availableHeight, AVAILABLE_HEIGHT);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.availableWidth, AVAILABLE_WIDTH);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(tracker.emit.callCount, 2); </span>// move to first page to write a line, and then move to next page
+<span class="cstat-no" title="statement not covered" >			assert.deepEqual(tracker.emit.getCall(1).args, ['pageChanged', {prevPage: 0, prevY: MARGINS.top + AVAILABLE_HEIGHT / 10, y: MARGINS.top}]);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should use existing page', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >			addOneTenthLines(1);</span>
+<span class="cstat-no" title="statement not covered" >			ctx.pages.push({items: [], pageSize: pageSize});</span>
+<span class="cstat-no" title="statement not covered" >			ctx.availableWidth = 'garbage';</span>
+<span class="cstat-no" title="statement not covered" >			ctx.availableHeight = 'garbage';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pew.moveToNextPage();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.page, 1);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.y, MARGINS.top);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.availableHeight, AVAILABLE_HEIGHT);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(ctx.availableWidth, AVAILABLE_WIDTH);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(tracker.emit.callCount, 2);</span>
+<span class="cstat-no" title="statement not covered" >			assert.deepEqual(tracker.emit.getCall(1).args, ['pageChanged', {prevPage: 0, prevY: MARGINS.top + AVAILABLE_HEIGHT / 10, y: MARGINS.top}]);</span>
+		});
+	});
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 30 2016 18:38:03 GMT+0000 (WET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

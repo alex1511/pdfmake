@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for tests/integration/alignment.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">tests/integration/</a> alignment.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/52</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >var assert = require('assert');</span>
+<span class="cstat-no" title="statement not covered" >var _ = require('lodash');</span>
+<span class="cstat-no" title="statement not covered" >var sizes = require('../../src/standardPageSizes');</span>
+<span class="cstat-no" title="statement not covered" >var integrationTestHelper = require('./integrationTestHelper');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >describe('Integration test: alignment', <span class="fstat-no" title="function not covered" >function () {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var testHelper = new integrationTestHelper();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	it('renders text right aligned', <span class="fstat-no" title="function not covered" >function () {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var dd = {</span>
+			content: [
+				{
+					text: 'Left aligned before',
+					alignment: 'left'
+				},
+				{
+					text: 'Right aligned',
+					alignment: 'right'
+				},
+				{
+					text: 'Left aligned after',
+					alignment: 'left'
+				}
+			]
+		};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var pages = testHelper.renderPages('A6', dd);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages.length, 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var itemLeftBefore = pages[0].items[0].item;</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemLeftBefore.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemLeftBefore.y, testHelper.MARGINS.top);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var itemRight = pages[0].items[1].item;</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemRight.x, sizes.A6[0] - testHelper.MARGINS.right - testHelper.getWidthOfString('Right aligned'));</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemRight.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var itemLeftAfter = pages[0].items[2].item;</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemLeftAfter.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemLeftAfter.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT * 2);</span>
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	it('renders text center aligned', <span class="fstat-no" title="function not covered" >function () {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var dd = {</span>
+			content: [
+				{
+					text: 'Left aligned before',
+					alignment: 'left'
+				},
+				{
+					text: 'Right aligned',
+					alignment: 'center'
+				},
+				{
+					text: 'Left aligned after',
+					alignment: 'left'
+				}
+			]
+		};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var pages = testHelper.renderPages('A6', dd);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages.length, 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var itemLeftBefore = pages[0].items[0].item;</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemLeftBefore.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemLeftBefore.y, testHelper.MARGINS.top);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var itemCenter = pages[0].items[1].item;</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemCenter.x, sizes.A6[0] / 2 - testHelper.getWidthOfString('Right aligned') / 2);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemCenter.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var itemLeftAfter = pages[0].items[2].item;</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemLeftAfter.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemLeftAfter.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT * 2);</span>
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	it('renders text justify aligned', <span class="fstat-no" title="function not covered" >function () {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var dd = {</span>
+			content: [
+				{
+					text: 'Left aligned before',
+					alignment: 'left'
+				},
+				{
+					text: 'I\'m not sure yet if this is the_desired_behavior. I find it a better.',
+					alignment: 'justify'
+				},
+				{
+					text: 'Left aligned after',
+					alignment: 'left'
+				}
+			]
+		};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var pages = testHelper.renderPages('A6', dd);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages.length, 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var itemLeftBefore = pages[0].items[0].item;</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemLeftBefore.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemLeftBefore.y, testHelper.MARGINS.top);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var itemJustify1 = pages[0].items[1].item;</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemJustify1.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemJustify1.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var availablePageWidth = sizes.A6[0] - testHelper.MARGINS.left - testHelper.MARGINS.right;</span>
+<span class="cstat-no" title="statement not covered" >		var endOfLastItem = itemJustify1.inlines[itemJustify1.inlines.length - 1].x + testHelper.getWidthOfString('is');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(endOfLastItem, availablePageWidth);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var itemJustify2 = pages[0].items[2].item;</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemJustify2.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemJustify2.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT * 2);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemJustify2.inlineWidths, testHelper.getWidthOfString('the_desired_behavior. I find it a better.'));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var itemLeftAfter = pages[0].items[3].item;</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemLeftAfter.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(itemLeftAfter.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT * 3);</span>
+	});
+&nbsp;
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 30 2016 18:38:03 GMT+0000 (WET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for tests/fontWrapper.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">tests/</a> fontWrapper.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.28% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/78</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">1.28% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/78</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >var assert = require('assert');</span>
+<span class="cstat-no" title="statement not covered" >var _ = require('lodash');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >var FontWrapper = require('../src/fontWrapper');</span>
+<span class="cstat-no" title="statement not covered" >var PdfKit = require('pdfkit');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >describe('FontWrapper', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >	var fontWrapper, pdfDoc, fontId, fontCount;</span>
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function getEncodedUnicodes(index, pdfDoc){</span>
+<span class="cstat-no" title="statement not covered" >    return pdfDoc.font('Roboto (bolditalic)' + index)._font.subset.unicodes;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	beforeEach(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		pdfDoc = new PdfKit({ size: [ 595.28, 841.89 ], compress: false});</span>
+<span class="cstat-no" title="statement not covered" >		fontWrapper = new FontWrapper(pdfDoc, 'examples/fonts/Roboto-Italic.ttf', 'Roboto (bolditalic)');</span>
+<span class="cstat-no" title="statement not covered" >		if(pdfDoc._font){ // Helvetica loaded by default</span>
+<span class="cstat-no" title="statement not covered" >			fontId = <span class="fstat-no" title="function not covered" >function(count){</span></span>
+<span class="cstat-no" title="statement not covered" >				return 'F' + (1 + count);</span>
+			};
+<span class="cstat-no" title="statement not covered" >			fontCount = <span class="fstat-no" title="function not covered" >function(count){</span></span>
+<span class="cstat-no" title="statement not covered" >				return (1 + count);</span>
+			};
+		} else { // Helvetica not loaded by default
+<span class="cstat-no" title="statement not covered" >			fontId = <span class="fstat-no" title="function not covered" >function(count){</span></span>
+<span class="cstat-no" title="statement not covered" >				return 'F' + count;</span>
+			};
+<span class="cstat-no" title="statement not covered" >			fontCount = <span class="fstat-no" title="function not covered" >function(count){</span></span>
+<span class="cstat-no" title="statement not covered" >				return count;</span>
+			};
+		}
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	describe('encoding', <span class="fstat-no" title="function not covered" >function() {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('encodes text', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >			var encoded = fontWrapper.encode('Anna ');</span>
+&nbsp;
+      // A  n  n  a
+      // 21 22 22 23 24
+<span class="cstat-no" title="statement not covered" >			assert.equal(encoded.encodedText, '2122222324');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(encoded.fontId, fontId(1));</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pdfDoc._fontCount, fontCount(1));</span>
+<span class="cstat-no" title="statement not covered" >      var encodedUnicodes = getEncodedUnicodes(0, pdfDoc);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes['A'.charCodeAt(0)], 33);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(encodedUnicodes['n'.charCodeAt(0)], 34);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(encodedUnicodes['a'.charCodeAt(0)], 35);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(encodedUnicodes[' '.charCodeAt(0)], 36);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('encodes text and re-use characters', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >      fontWrapper.encode('Anna ');</span>
+<span class="cstat-no" title="statement not covered" >      var encoded = fontWrapper.encode('na na AAA!');</span>
+&nbsp;
+      // A  n  n  a
+      // 21 22 22 23 24
+&nbsp;
+      // n  a     n  a     A  A  A  !
+      // 22 23 24 22 23 24 21 21 21 25
+<span class="cstat-no" title="statement not covered" >      assert.equal(encoded.encodedText, '22232422232421212125');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(encoded.fontId, fontId(1));</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pdfDoc._fontCount, fontCount(1));</span>
+<span class="cstat-no" title="statement not covered" >      var encodedUnicodes = getEncodedUnicodes(0, pdfDoc);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes['A'.charCodeAt(0)], 33);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes['n'.charCodeAt(0)], 34);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes['a'.charCodeAt(0)], 35);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes[' '.charCodeAt(0)], 36);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes['!'.charCodeAt(0)], 37);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('encodes in new font when old font is used', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >      var text = _.times(91, String.fromCharCode).join(''); </span>// does not include a-z, includes 0-9 &amp; A-Z
+<span class="cstat-no" title="statement not covered" >      fontWrapper.encode(text);</span>
+<span class="cstat-no" title="statement not covered" >      var encoded = fontWrapper.encode('cannot');</span>
+&nbsp;
+      // c  a  n  n  o  t
+      // 21 22 23 23 24 25
+<span class="cstat-no" title="statement not covered" >      assert.equal(encoded.encodedText, '212223232425');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(encoded.fontId, fontId(2));</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pdfDoc._fontCount, fontCount(2));</span>
+<span class="cstat-no" title="statement not covered" >      var encodedUnicodes = getEncodedUnicodes(1, pdfDoc);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes['c'.charCodeAt(0)], 33);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes['a'.charCodeAt(0)], 34);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes['n'.charCodeAt(0)], 35);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes['o'.charCodeAt(0)], 36);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes['t'.charCodeAt(0)], 37);</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('encodes NOT in new font when both unique character sets are equal', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >      var text1 = _.times(47, String.fromCharCode).join(''); </span>// does not include a-z, includes 0-9 &amp; A-Z
+<span class="cstat-no" title="statement not covered" >      fontWrapper.encode(text1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      var text2 = _.times(47, String.fromCharCode).join(''); </span>// does not include a-z, includes 0-9 &amp; A-Z
+<span class="cstat-no" title="statement not covered" >      fontWrapper.encode(text2);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pdfDoc._font.id, fontId(1));</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pdfDoc._fontCount, fontCount(1));</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(pdfDoc._font.name, 'Roboto-Italic');</span>
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('use other font when it still has enough space', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >      var text1 = 'cannot',</span>
+          text2 = _.times(92, String.fromCharCode).join(''), // does not include a-z, includes 0-9 &amp; A-Z
+          text3 = 'This can work.';
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      fontWrapper.encode(text1);</span>
+<span class="cstat-no" title="statement not covered" >      fontWrapper.encode(text2);</span>
+<span class="cstat-no" title="statement not covered" >      var encoded = fontWrapper.encode(text3);</span>
+&nbsp;
+      // c  a  n  n  o  t
+      // 21 22 23 23 24 25
+&nbsp;
+      // T  h  i  s     c  a  n     w  o  r  k  .
+      // 26 27 28 29 2a 21 22 23 2a 2b 24 2c 2d 2e
+<span class="cstat-no" title="statement not covered" >      assert.equal(encoded.encodedText, '262728292a2122232a2b242c2d2e');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(encoded.fontId, fontId(1));</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pdfDoc._fontCount, fontCount(2));</span>
+<span class="cstat-no" title="statement not covered" >      var encodedUnicodes = getEncodedUnicodes(0, pdfDoc);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes['T'.charCodeAt(0)], 38);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes['h'.charCodeAt(0)], 39);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes['i'.charCodeAt(0)], 40);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes['s'.charCodeAt(0)], 41);</span>
+<span class="cstat-no" title="statement not covered" >      assert.equal(encodedUnicodes[' '.charCodeAt(0)], 42);</span>
+    });
+&nbsp;
+	});
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 30 2016 18:38:03 GMT+0000 (WET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

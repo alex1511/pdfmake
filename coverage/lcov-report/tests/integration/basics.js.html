@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for tests/integration/basics.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">tests/integration/</a> basics.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/30</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >var assert = require('assert');</span>
+<span class="cstat-no" title="statement not covered" >var _ = require('lodash');</span>
+<span class="cstat-no" title="statement not covered" >var sizes = require('../../src/standardPageSizes');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >var integrationTestHelper = require('./integrationTestHelper');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >describe('Integration test: basics', <span class="fstat-no" title="function not covered" >function () {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var testHelper = new integrationTestHelper();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	it('renders text on page', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		var pages = testHelper.renderPages('A7', {</span>
+			content: [
+				'First paragraph',
+				'Second paragraph on three lines because it is longer'
+			]
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages.length, 1);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages[0].items.length, 4);</span>
+<span class="cstat-no" title="statement not covered" >		assert.deepEqual(_.map(_.map(pages[0].items, 'item'), 'x'), [testHelper.MARGINS.left, testHelper.MARGINS.left, testHelper.MARGINS.left, testHelper.MARGINS.left]);</span>
+<span class="cstat-no" title="statement not covered" >		assert.deepEqual(_.map(_.map(pages[0].items, 'item'), 'y'), [testHelper.MARGINS.top, testHelper.MARGINS.top + testHelper.LINE_HEIGHT, testHelper.MARGINS.top + 2 * testHelper.LINE_HEIGHT, testHelper.MARGINS.top + 3 * testHelper.LINE_HEIGHT]);</span>
+<span class="cstat-no" title="statement not covered" >		assert.deepEqual(testHelper.getInlineTexts(pages, {page: 0, item: 0}), ['First ', 'paragraph']);</span>
+<span class="cstat-no" title="statement not covered" >		assert.deepEqual(testHelper.getInlineTexts(pages, {page: 0, item: 1}), ['Second ', 'paragraph ', 'on ']);</span>
+<span class="cstat-no" title="statement not covered" >		assert.deepEqual(testHelper.getInlineTexts(pages, {page: 0, item: 2}), ['three ', 'lines ', 'because ', 'it ', 'is ']);</span>
+<span class="cstat-no" title="statement not covered" >		assert.deepEqual(testHelper.getInlineTexts(pages, {page: 0, item: 3}), ['longer']);</span>
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	it('renders text with margin', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		var customMargin = 10;</span>
+<span class="cstat-no" title="statement not covered" >		var anotherCustomMargin = 13;</span>
+<span class="cstat-no" title="statement not covered" >		var dd = {</span>
+			content: [
+				{text: 'has margin', margin: customMargin},
+				{text: 'has only top/bottom margin', margin: [0, customMargin]},
+				{
+					text: 'has single set margin',
+					margin: [anotherCustomMargin, anotherCustomMargin, anotherCustomMargin, anotherCustomMargin]
+				},
+				{text: 'has only right margin', alignment: 'right', marginRight: 20}
+			]
+		};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var pages = testHelper.renderPages('A5', dd);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages.length, 1);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages[0].items[0].item.x, testHelper.MARGINS.left + customMargin);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages[0].items[0].item.y, testHelper.MARGINS.top + customMargin);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages[0].items[1].item.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages[0].items[1].item.y, testHelper.MARGINS.top + customMargin * 3 + testHelper.LINE_HEIGHT);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages[0].items[2].item.x, testHelper.MARGINS.left + anotherCustomMargin);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages[0].items[2].item.y.toFixed(3), testHelper.MARGINS.top + customMargin * 4 + anotherCustomMargin + testHelper.LINE_HEIGHT * 2);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages[0].items[3].item.x, sizes.A5[0] - testHelper.MARGINS.right - 20 - testHelper.getWidthOfString('has only right margin'));</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages[0].items[3].item.y.toFixed(3), testHelper.MARGINS.top + customMargin * 4 + anotherCustomMargin * 2 + testHelper.LINE_HEIGHT * 3);</span>
+	});
+&nbsp;
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 30 2016 18:38:03 GMT+0000 (WET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

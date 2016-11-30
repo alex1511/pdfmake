@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/documentContext.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> documentContext.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.34% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/128</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.4% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/125</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* jslint node: true */
+'use strict';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >var TraversalTracker = require('./traversalTracker');</span>
+&nbsp;
+/**
+* Creates an instance of DocumentContext - a store for current x, y positions and available width/height.
+* It facilitates column divisions and vertical sync
+*/
+<span class="fstat-no" title="function not covered" >function DocumentContext(pageSize, pageMargins) {</span>
+<span class="cstat-no" title="statement not covered" >	this.pages = [];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.pageMargins = pageMargins;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.x = pageMargins.left;</span>
+<span class="cstat-no" title="statement not covered" >	this.availableWidth = pageSize.width - pageMargins.left - pageMargins.right;</span>
+<span class="cstat-no" title="statement not covered" >	this.availableHeight = 0;</span>
+<span class="cstat-no" title="statement not covered" >	this.page = -1;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.snapshots = [];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.endingCell = null;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  this.tracker = new TraversalTracker();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.addPage(pageSize);</span>
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.beginColumnGroup = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >	this.snapshots.push({</span>
+		x: this.x,
+		y: this.y,
+		availableHeight: this.availableHeight,
+		availableWidth: this.availableWidth,
+		page: this.page,
+		bottomMost: { y: this.y, page: this.page },
+		endingCell: this.endingCell,
+		lastColumnWidth: this.lastColumnWidth
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.lastColumnWidth = 0;</span>
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.beginColumn = <span class="fstat-no" title="function not covered" >function(width, offset, endingCell) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var saved = this.snapshots[this.snapshots.length - 1];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.calculateBottomMost(saved);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  this.endingCell = endingCell;</span>
+<span class="cstat-no" title="statement not covered" >	this.page = saved.page;</span>
+<span class="cstat-no" title="statement not covered" >	this.x = this.x + this.lastColumnWidth + (offset || 0);</span>
+<span class="cstat-no" title="statement not covered" >	this.y = saved.y;</span>
+<span class="cstat-no" title="statement not covered" >	this.availableWidth = width;	</span>//saved.availableWidth - offset;
+<span class="cstat-no" title="statement not covered" >	this.availableHeight = saved.availableHeight;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.lastColumnWidth = width;</span>
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.calculateBottomMost = <span class="fstat-no" title="function not covered" >function(destContext) {</span></span>
+<span class="cstat-no" title="statement not covered" >	if (this.endingCell) {</span>
+<span class="cstat-no" title="statement not covered" >		this.saveContextInEndingCell(this.endingCell);</span>
+<span class="cstat-no" title="statement not covered" >		this.endingCell = null;</span>
+	} else {
+<span class="cstat-no" title="statement not covered" >		destContext.bottomMost = bottomMostContext(this, destContext.bottomMost);</span>
+	}
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.markEnding = <span class="fstat-no" title="function not covered" >function(endingCell) {</span></span>
+<span class="cstat-no" title="statement not covered" >	this.page = endingCell._columnEndingContext.page;</span>
+<span class="cstat-no" title="statement not covered" >	this.x = endingCell._columnEndingContext.x;</span>
+<span class="cstat-no" title="statement not covered" >	this.y = endingCell._columnEndingContext.y;</span>
+<span class="cstat-no" title="statement not covered" >	this.availableWidth = endingCell._columnEndingContext.availableWidth;</span>
+<span class="cstat-no" title="statement not covered" >	this.availableHeight = endingCell._columnEndingContext.availableHeight;</span>
+<span class="cstat-no" title="statement not covered" >	this.lastColumnWidth = endingCell._columnEndingContext.lastColumnWidth;</span>
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.saveContextInEndingCell = <span class="fstat-no" title="function not covered" >function(endingCell) {</span></span>
+<span class="cstat-no" title="statement not covered" >	endingCell._columnEndingContext = {</span>
+		page: this.page,
+		x: this.x,
+		y: this.y,
+		availableHeight: this.availableHeight,
+		availableWidth: this.availableWidth,
+		lastColumnWidth: this.lastColumnWidth
+	};
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.completeColumnGroup = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >	var saved = this.snapshots.pop();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.calculateBottomMost(saved);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.endingCell = null;</span>
+<span class="cstat-no" title="statement not covered" >	this.x = saved.x;</span>
+<span class="cstat-no" title="statement not covered" >	this.y = saved.bottomMost.y;</span>
+<span class="cstat-no" title="statement not covered" >	this.page = saved.bottomMost.page;</span>
+<span class="cstat-no" title="statement not covered" >	this.availableWidth = saved.availableWidth;</span>
+<span class="cstat-no" title="statement not covered" >	this.availableHeight = saved.bottomMost.availableHeight;</span>
+<span class="cstat-no" title="statement not covered" >	this.lastColumnWidth = saved.lastColumnWidth;</span>
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.addMargin = <span class="fstat-no" title="function not covered" >function(left, right) {</span></span>
+<span class="cstat-no" title="statement not covered" >	this.x += left;</span>
+<span class="cstat-no" title="statement not covered" >	this.availableWidth -= left + (right || 0);</span>
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.moveDown = <span class="fstat-no" title="function not covered" >function(offset) {</span></span>
+<span class="cstat-no" title="statement not covered" >	this.y += offset;</span>
+<span class="cstat-no" title="statement not covered" >	this.availableHeight -= offset;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return this.availableHeight &gt; 0;</span>
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.initializePage = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >	this.y = this.pageMargins.top;</span>
+<span class="cstat-no" title="statement not covered" >	this.availableHeight = this.getCurrentPage().pageSize.height - this.pageMargins.top - this.pageMargins.bottom;</span>
+<span class="cstat-no" title="statement not covered" >	this.pageSnapshot().availableWidth = this.getCurrentPage().pageSize.width - this.pageMargins.left - this.pageMargins.right;</span>
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.pageSnapshot = <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >  if(this.snapshots[0]){</span>
+<span class="cstat-no" title="statement not covered" >    return this.snapshots[0];</span>
+  } else {
+<span class="cstat-no" title="statement not covered" >    return this;</span>
+  }
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.moveTo = <span class="fstat-no" title="function not covered" >function(x,y) {</span></span>
+<span class="cstat-no" title="statement not covered" >	if(x !== undefined &amp;&amp; x !== null) {</span>
+<span class="cstat-no" title="statement not covered" >		this.x = x;</span>
+<span class="cstat-no" title="statement not covered" >		this.availableWidth = this.getCurrentPage().pageSize.width - this.x - this.pageMargins.right;</span>
+	}
+<span class="cstat-no" title="statement not covered" >	if(y !== undefined &amp;&amp; y !== null){</span>
+<span class="cstat-no" title="statement not covered" >		this.y = y;</span>
+<span class="cstat-no" title="statement not covered" >		this.availableHeight = this.getCurrentPage().pageSize.height - this.y - this.pageMargins.bottom;</span>
+	}
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.beginDetachedBlock = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >	this.snapshots.push({</span>
+		x: this.x,
+		y: this.y,
+		availableHeight: this.availableHeight,
+		availableWidth: this.availableWidth,
+		page: this.page,
+		endingCell: this.endingCell,
+		lastColumnWidth: this.lastColumnWidth
+	});
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.endDetachedBlock = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >	var saved = this.snapshots.pop();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.x = saved.x;</span>
+<span class="cstat-no" title="statement not covered" >	this.y = saved.y;</span>
+<span class="cstat-no" title="statement not covered" >	this.availableWidth = saved.availableWidth;</span>
+<span class="cstat-no" title="statement not covered" >	this.availableHeight = saved.availableHeight;</span>
+<span class="cstat-no" title="statement not covered" >	this.page = saved.page;</span>
+<span class="cstat-no" title="statement not covered" >	this.endingCell = saved.endingCell;</span>
+<span class="cstat-no" title="statement not covered" >	this.lastColumnWidth = saved.lastColumnWidth;</span>
+};
+&nbsp;
+<span class="fstat-no" title="function not covered" >function pageOrientation(pageOrientationString, currentPageOrientation){</span>
+<span class="cstat-no" title="statement not covered" >	if(pageOrientationString === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >		return currentPageOrientation;</span>
+	} else <span class="cstat-no" title="statement not covered" >if(pageOrientationString === 'landscape'){</span>
+<span class="cstat-no" title="statement not covered" >		return 'landscape';</span>
+	} else {
+<span class="cstat-no" title="statement not covered" >		return 'portrait';</span>
+	}
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >var getPageSize = <span class="fstat-no" title="function not covered" >function (currentPage, newPageOrientation) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	newPageOrientation = pageOrientation(newPageOrientation, currentPage.pageSize.orientation);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	if(newPageOrientation !== currentPage.pageSize.orientation) {</span>
+<span class="cstat-no" title="statement not covered" >		return {</span>
+			orientation: newPageOrientation,
+			width: currentPage.pageSize.height,
+			height: currentPage.pageSize.width
+		};
+	} else {
+<span class="cstat-no" title="statement not covered" >		return {</span>
+			orientation: currentPage.pageSize.orientation,
+			width: currentPage.pageSize.width,
+			height: currentPage.pageSize.height
+		};
+	}
+&nbsp;
+};
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.moveToNextPage = <span class="fstat-no" title="function not covered" >function(pageOrientation) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var nextPageIndex = this.page + 1;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var prevPage = this.page;</span>
+<span class="cstat-no" title="statement not covered" >	var prevY = this.y;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var createNewPage = nextPageIndex &gt;= this.pages.length;</span>
+<span class="cstat-no" title="statement not covered" >	if (createNewPage) {</span>
+<span class="cstat-no" title="statement not covered" >		this.addPage(getPageSize(this.getCurrentPage(), pageOrientation));</span>
+	} else {
+<span class="cstat-no" title="statement not covered" >		this.page = nextPageIndex;</span>
+<span class="cstat-no" title="statement not covered" >		this.initializePage();</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return {</span>
+		newPageCreated: createNewPage,
+		prevPage: prevPage,
+		prevY: prevY,
+		y: this.y
+	};
+};
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.addPage = <span class="fstat-no" title="function not covered" >function(pageSize) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var page = { items: [], pageSize: pageSize };</span>
+<span class="cstat-no" title="statement not covered" >	this.pages.push(page);</span>
+<span class="cstat-no" title="statement not covered" >	this.page = this.pages.length - 1;</span>
+<span class="cstat-no" title="statement not covered" >	this.initializePage();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.tracker.emit('pageAdded');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return page;</span>
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.getCurrentPage = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >	if (this.page &lt; 0 || this.page &gt;= this.pages.length) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return this.pages[this.page];</span>
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >DocumentContext.prototype.getCurrentPosition = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >  var pageSize = this.getCurrentPage().pageSize;</span>
+<span class="cstat-no" title="statement not covered" >  var innerHeight = pageSize.height - this.pageMargins.top - this.pageMargins.bottom;</span>
+<span class="cstat-no" title="statement not covered" >  var innerWidth = pageSize.width - this.pageMargins.left - this.pageMargins.right;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return {</span>
+    pageNumber: this.page + 1,
+    pageOrientation: pageSize.orientation,
+    pageInnerHeight: innerHeight,
+    pageInnerWidth: innerWidth,
+    left: this.x,
+    top: this.y,
+    verticalRatio: ((this.y - this.pageMargins.top) / innerHeight),
+    horizontalRatio: ((this.x - this.pageMargins.left) / innerWidth)
+  };
+};
+&nbsp;
+<span class="fstat-no" title="function not covered" >function bottomMostContext(c1, c2) {</span>
+<span class="cstat-no" title="statement not covered" >	var r;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	if (c1.page &gt; c2.page) <span class="cstat-no" title="statement not covered" >r = c1;</span></span>
+	else <span class="cstat-no" title="statement not covered" >if (c2.page &gt; c1.page) <span class="cstat-no" title="statement not covered" >r = c2;</span></span>
+	else <span class="cstat-no" title="statement not covered" >r = (c1.y &gt; c2.y) ? c1 : c2;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return {</span>
+		page: r.page,
+		x: r.x,
+		y: r.y,
+		availableHeight: r.availableHeight,
+		availableWidth: r.availableWidth
+	};
+}
+&nbsp;
+/****TESTS**** (add a leading '/' to uncomment)
+DocumentContext.bottomMostContext = bottomMostContext;
+// */
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = DocumentContext;</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 30 2016 18:38:36 GMT+0000 (WET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for tests/integration/lists.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">tests/integration/</a> lists.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0.77% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/130</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0.77% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/130</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >var assert = require('assert');</span>
+<span class="cstat-no" title="statement not covered" >var _ = require('lodash');</span>
+<span class="cstat-no" title="statement not covered" >var sizes = require('../../src/standardPageSizes');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >var integrationTestHelper = require('./integrationTestHelper');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >describe('Integration test: lists', <span class="fstat-no" title="function not covered" >function () {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var testHelper = new integrationTestHelper();</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >	function getBulletListLine(pages, options) {</span>
+<span class="cstat-no" title="statement not covered" >		options.itemNumber = options.itemNumber || 1;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var bullet = pages[options.pageNumber].items[options.itemNumber * 2 - 1];</span>
+<span class="cstat-no" title="statement not covered" >		var content = pages[options.pageNumber].items[options.itemNumber * 2 - 2];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		return {</span>
+			bullet: bullet &amp;&amp; bullet.item,
+			content: content &amp;&amp; content.item
+		}
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	it('renders a ordered list', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		var dd = {</span>
+			content: {
+				ol: [
+					'item 1',
+					'item 2',
+					'item 3 - Paleo American Apparel forage whatever.'
+				]
+			}
+		};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var pages = testHelper.renderPages('A6', dd);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages.length, 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item1 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 1});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item1.content.inlines, 'text').join(''), 'item 1');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item1.bullet.inlines, 'text').join(''), '1. ');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(item1.bullet.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item1.content.x, testHelper.MARGINS.left + testHelper.getWidthOfString('1. '));</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item1.bullet.y, testHelper.MARGINS.top);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item1.content.y, testHelper.MARGINS.top);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item2 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 2});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item2.content.inlines, 'text').join(''), 'item 2');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item2.bullet.inlines, 'text').join(''), '2. ');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(item2.bullet.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item2.content.x, testHelper.MARGINS.left + testHelper.getWidthOfString('2. '));</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item2.bullet.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item2.content.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item3 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 3});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item3.content.inlines, 'text').join(''), 'item 3 - Paleo American Apparel ');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item3.bullet.inlines, 'text').join(''), '3. ');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(item3.bullet.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item3.content.x, testHelper.MARGINS.left + testHelper.getWidthOfString('3. '));</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item3.bullet.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT * 2);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item3.content.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT * 2);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item4 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 4});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item4.content.inlines, 'text').join(''), 'forage whatever.');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item4.bullet, undefined);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(item4.content.x, testHelper.MARGINS.left + testHelper.getWidthOfString(testHelper.DEFAULT_BULLET_SPACER));</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item4.content.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT * 3);</span>
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	it('renders a ordered list and adapts margin to longest list number', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		var dd = {</span>
+			content: {
+				ol: [
+					'item 1',
+					'item 2',
+					'item 3',
+					'item 4',
+					'item 5',
+					'item 6',
+					'item 7',
+					'item 8',
+					'item 9',
+					'item 10'
+				]
+			}
+		};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var pages = testHelper.renderPages('A6', dd);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages.length, 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item1 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 1});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item1.content.inlines, 'text').join(''), 'item 1');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item1.bullet.inlines, 'text').join(''), '1. ');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(item1.bullet.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item1.content.x, testHelper.MARGINS.left + testHelper.getWidthOfString('10. '));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item10 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 10});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item10.content.inlines, 'text').join(''), 'item 10');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item10.bullet.inlines, 'text').join(''), '10. ');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(item10.bullet.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item10.content.x, testHelper.MARGINS.left + testHelper.getWidthOfString('10. '));</span>
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	it('renders a unordered list', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		var dd = {</span>
+			content: {
+				ul: [
+					'item 1',
+					'item 2',
+					'item 3 - Paleo American Apparel forage whatever.'
+				]
+			}
+		};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var pages = testHelper.renderPages('A6', dd);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages.length, 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var bulletRadius = 2;</span>
+<span class="cstat-no" title="statement not covered" >		var bulletMargin = testHelper.MARGINS.left + bulletRadius;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item1 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 1});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item1.content.inlines, 'text').join(''), 'item 1');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item1.bullet.type, 'ellipse');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(item1.bullet.x, bulletMargin);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item1.content.x, testHelper.MARGINS.left + testHelper.getWidthOfString(testHelper.DEFAULT_BULLET_SPACER));</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item1.content.y, testHelper.MARGINS.top);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item2 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 2});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item2.content.inlines, 'text').join(''), 'item 2');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item2.bullet.type, 'ellipse');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(item2.bullet.x, bulletMargin);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item2.content.x, testHelper.MARGINS.left + testHelper.getWidthOfString(testHelper.DEFAULT_BULLET_SPACER));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item3 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 3});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item3.content.inlines, 'text').join(''), 'item 3 - Paleo American Apparel ');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item3.bullet.type, 'ellipse');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(item3.bullet.x, bulletMargin);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item3.content.x, testHelper.MARGINS.left + testHelper.getWidthOfString(testHelper.DEFAULT_BULLET_SPACER));</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item3.content.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT * 2);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item4 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 4});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item4.content.inlines, 'text').join(''), 'forage whatever.');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item4.bullet, undefined);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(item4.content.x, testHelper.MARGINS.left + testHelper.getWidthOfString(testHelper.DEFAULT_BULLET_SPACER));</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item4.content.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT * 3);</span>
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	it('renders a unordered list and keeps constant small margin', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		var dd = {</span>
+			content: {
+				ul: [
+					'item 1',
+					'item 2',
+					'item 3',
+					'item 4',
+					'item 5',
+					'item 6',
+					'item 7',
+					'item 8',
+					'item 9',
+					'item 10'
+				]
+			}
+		};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var pages = testHelper.renderPages('A6', dd);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages.length, 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var bulletRadius = 2;</span>
+<span class="cstat-no" title="statement not covered" >		var bulletMargin = testHelper.MARGINS.left + bulletRadius;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item1 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 1});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item1.content.inlines, 'text').join(''), 'item 1');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(item1.bullet.x, bulletMargin);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item1.content.x, testHelper.MARGINS.left + testHelper.getWidthOfString(testHelper.DEFAULT_BULLET_SPACER));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item10 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 10});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item10.content.inlines, 'text').join(''), 'item 10');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(item10.bullet.x, bulletMargin);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item10.content.x, testHelper.MARGINS.left + testHelper.getWidthOfString(testHelper.DEFAULT_BULLET_SPACER));</span>
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	it('renders nested lists', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		var dd = {</span>
+			content: {
+				ol: [
+					'item 1',
+					[
+						'item 2',
+						{ol: ['subitem 1', 'subitem 2']}
+					],
+					'item 3'
+				]
+			}
+		};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var pages = testHelper.renderPages('A6', dd);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pages.length, 1);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item1 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 1});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item1.content.inlines, 'text').join(''), 'item 1');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item1.bullet.inlines, 'text').join(''), '1. ');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(item1.bullet.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item1.content.x, testHelper.MARGINS.left + testHelper.getWidthOfString('1. '));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item2 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 2});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item2.content.inlines, 'text').join(''), 'item 2');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item2.bullet.inlines, 'text').join(''), '2. ');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item2BulletSpacing = testHelper.MARGINS.left + testHelper.getWidthOfString('2. ');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item2.bullet.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item2.content.x, item2BulletSpacing);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var subItem1 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 3});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(subItem1.content.inlines, 'text').join(''), 'subitem 1');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(subItem1.bullet.inlines, 'text').join(''), '1. ');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(subItem1.bullet.x, item2BulletSpacing);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(subItem1.content.x, item2BulletSpacing + testHelper.getWidthOfString('1. '));</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(subItem1.content.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT * 2);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var subItem2 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 4});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(subItem2.content.inlines, 'text').join(''), 'subitem 2');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(subItem2.bullet.inlines, 'text').join(''), '2. ');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(subItem2.bullet.x, item2BulletSpacing);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(subItem2.content.x, item2BulletSpacing + testHelper.getWidthOfString('2. '));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item3 = getBulletListLine(pages, {pageNumber: 0, itemNumber: 5});</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item3.content.inlines, 'text').join(''), 'item 3');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(_.map(item3.bullet.inlines, 'text').join(''), '3. ');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var item3BulletSpacing = testHelper.MARGINS.left + testHelper.getWidthOfString('3. ');</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item3.bullet.x, testHelper.MARGINS.left);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item3.content.x, item3BulletSpacing);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(item3.content.y, testHelper.MARGINS.top + testHelper.LINE_HEIGHT * 4);</span>
+	});
+&nbsp;
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 30 2016 18:38:03 GMT+0000 (WET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

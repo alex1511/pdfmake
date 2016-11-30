@@ -1,0 +1,1079 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for tests/documentContext.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">tests/</a> documentContext.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/218</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/218</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >var assert = require('assert');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >var DocumentContext = require('../src/documentContext');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >describe('DocumentContext', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >	var pc;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	beforeEach(<span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		pc = new DocumentContext({ width: 400, height: 800, orientation: 'portrait' }, { left: 40, right: 40, top: 60, bottom: 60 });</span>
+		// pc.addPage();
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	it('should set initial values based on pageSize and pageMargins', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pc.x, 40);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pc.y, 60);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pc.availableWidth, 400 - 40 - 40);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pc.availableHeight, 800 - 60 - 60);</span>
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	describe('beginColumnGroup', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		it('should save current settings', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >			pc.x = 80;</span>
+<span class="cstat-no" title="statement not covered" >			pc.page = 3;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.snapshots.length, 1);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.snapshots[0].x, 40);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.snapshots[0].page, 0);</span>
+		});
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	describe('beginColumn', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		it('should set y, page and availableHeight back to the values stored in beginColumnGroup', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >			pc.y = 150;</span>
+<span class="cstat-no" title="statement not covered" >			pc.page = 5;</span>
+<span class="cstat-no" title="statement not covered" >			pc.availableHeight = 123;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.y, 60);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.page, 0);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.availableHeight, 800 - 60 - 60);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should add offset to current x', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(50, 30);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.x, 40 + 30);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should add previous column widths to x when starting a new column', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(30);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.x, 40);</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(20);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.x, 40 + 30);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should set availableWidth to the specified column width', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(30);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.availableWidth, 30);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should save context in endingCell if provided', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			var endingCell = {};</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(30, 0, endingCell);</span>
+<span class="cstat-no" title="statement not covered" >			pc.y = 150;</span>
+<span class="cstat-no" title="statement not covered" >			pc.page = 3;</span>
+<span class="cstat-no" title="statement not covered" >			pc.availableHeight = 123;</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(30, 0);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(endingCell._columnEndingContext.y, 150);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(endingCell._columnEndingContext.page, 3);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(endingCell._columnEndingContext.availableHeight, 123);</span>
+		});
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	describe('completeColumnGroup', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		it('should set x to the value stored in beginColumnGroup', <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >			pc.x = 150;</span>
+<span class="cstat-no" title="statement not covered" >			pc.completeColumnGroup();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.x, 40);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should set page to the value pointing to the end of the longest column', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(30);</span>
+<span class="cstat-no" title="statement not covered" >			pc.page = 3;</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(30);</span>
+<span class="cstat-no" title="statement not covered" >			pc.page = 7</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(30);</span>
+<span class="cstat-no" title="statement not covered" >			pc.page = 4;</span>
+<span class="cstat-no" title="statement not covered" >			pc.completeColumnGroup();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.page, 7);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should skip non-ending-cells (spanning over multiple rows) during vsync', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			var endingCell = {};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pc.beginColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(30, 0, endingCell);</span>
+<span class="cstat-no" title="statement not covered" >			pc.y = 150;</span>
+<span class="cstat-no" title="statement not covered" >			pc.page = 3;</span>
+<span class="cstat-no" title="statement not covered" >			pc.availableHeight = 123;</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(30, 0);</span>
+<span class="cstat-no" title="statement not covered" >			pc.y = 100;</span>
+<span class="cstat-no" title="statement not covered" >			pc.page = 3;</span>
+<span class="cstat-no" title="statement not covered" >			pc.completeColumnGroup();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.page, 3);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.y, 100);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('non-ending-cells (spanning over multiple rows) should also work with nested columns', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			var endingCell = {};</span>
+<span class="cstat-no" title="statement not covered" >			var endingCell2 = {};</span>
+&nbsp;
+			// external table
+<span class="cstat-no" title="statement not covered" >			pc.beginColumnGroup();</span>
+			// col1 spans over 2 rows
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(30, 0, endingCell);</span>
+<span class="cstat-no" title="statement not covered" >			pc.y = 350;</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(40);</span>
+<span class="cstat-no" title="statement not covered" >			pc.y = 100;</span>
+			// column3 contains a nested table
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(100);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >				pc.beginColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >				pc.beginColumn(20);</span>
+<span class="cstat-no" title="statement not covered" >				pc.y = 100;</span>
+<span class="cstat-no" title="statement not covered" >				pc.beginColumn(20);</span>
+<span class="cstat-no" title="statement not covered" >				pc.y = 120;</span>
+				// col3.3 spans over 2 rows
+<span class="cstat-no" title="statement not covered" >				pc.beginColumn(40, 0, endingCell2);</span>
+<span class="cstat-no" title="statement not covered" >				pc.y = 180;</span>
+<span class="cstat-no" title="statement not covered" >				pc.completeColumnGroup();</span>
+&nbsp;
+				//// bottom of all non-spanned columns
+<span class="cstat-no" title="statement not covered" >				assert.equal(pc.y, 120);</span>
+&nbsp;
+				// second row (of nested table)
+<span class="cstat-no" title="statement not covered" >				pc.beginColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >				pc.beginColumn(20);</span>
+<span class="cstat-no" title="statement not covered" >				pc.y = 10;</span>
+<span class="cstat-no" title="statement not covered" >				pc.beginColumn(20);</span>
+<span class="cstat-no" title="statement not covered" >				pc.y = 20;</span>
+				// col3.3 spans over 2 rows
+<span class="cstat-no" title="statement not covered" >				pc.beginColumn(40, 0);</span>
+<span class="cstat-no" title="statement not covered" >				pc.markEnding(endingCell2);</span>
+<span class="cstat-no" title="statement not covered" >				pc.completeColumnGroup();</span>
+&nbsp;
+				//// spanned column was large enough to influence bottom
+<span class="cstat-no" title="statement not covered" >				assert.equal(pc.y, 180);</span>
+<span class="cstat-no" title="statement not covered" >			pc.completeColumnGroup();</span>
+&nbsp;
+			//// bottom of all non-spanned columns
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.y, 180);</span>
+&nbsp;
+			// second row
+<span class="cstat-no" title="statement not covered" >			pc.beginColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(30);</span>
+<span class="cstat-no" title="statement not covered" >			pc.markEnding(endingCell);</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(40);</span>
+<span class="cstat-no" title="statement not covered" >			pc.y = 50;</span>
+<span class="cstat-no" title="statement not covered" >			pc.beginColumn(100);</span>
+<span class="cstat-no" title="statement not covered" >			pc.y = 10;</span>
+<span class="cstat-no" title="statement not covered" >			pc.completeColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.y, 350);</span>
+		});
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	describe('addMargin', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		it('should change both x and availableWidth', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			var x = pc.x;</span>
+<span class="cstat-no" title="statement not covered" >			var aWidth = pc.availableWidth;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pc.addMargin(10);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.x, x + 10);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.availableWidth, aWidth - 10);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should support left and right margins', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			var x = pc.x;</span>
+<span class="cstat-no" title="statement not covered" >			var aWidth = pc.availableWidth;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pc.addMargin(10, 15);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.x, x + 10);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.availableWidth, aWidth - 10 - 15);</span>
+		});
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	describe('moveDown', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		it('should change both y and availableHeight', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			var y = pc.y;</span>
+<span class="cstat-no" title="statement not covered" >			var ah = pc.availableHeight;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pc.moveDown(123);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.y, y + 123);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.availableHeight, ah - 123);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should return true if there is still some space left on the page', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			assert(pc.moveDown(123));</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should return false if there\'s no space left after the operation', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			assert(!pc.moveDown(1200));</span>
+		});
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	describe('moveToNext page', <span class="fstat-no" title="function not covered" >function(){</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should add new page in portrait', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >			pc.moveToNextPage();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.pages[0].pageSize.orientation, 'portrait');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.pages[1].pageSize.orientation, 'portrait');</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should add a new page in the same orientation as the previous one', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >			pc.moveToNextPage('landscape');</span>
+<span class="cstat-no" title="statement not covered" >			pc.moveToNextPage();</span>
+<span class="cstat-no" title="statement not covered" >			pc.moveToNextPage('portrait');</span>
+<span class="cstat-no" title="statement not covered" >			pc.moveToNextPage();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.pages[0].pageSize.orientation, 'portrait');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.pages[1].pageSize.orientation, 'landscape');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.pages[2].pageSize.orientation, 'landscape');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.pages[3].pageSize.orientation, 'portrait');</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.pages[4].pageSize.orientation, 'portrait');</span>
+		});
+		
+	});
+	
+<span class="cstat-no" title="statement not covered" >	describe('addPage', <span class="fstat-no" title="function not covered" >function() {</span></span>
+		
+<span class="cstat-no" title="statement not covered" >		var pageSize;</span>
+		
+<span class="cstat-no" title="statement not covered" >		beforeEach(<span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >			pageSize = {width: 200, height: 400, orientation: 'landscape'};</span>
+		});
+		
+<span class="cstat-no" title="statement not covered" >		it('should add a new page', <span class="fstat-no" title="function not covered" >function() {</span></span>
+			
+<span class="cstat-no" title="statement not covered" >      pc.addPage(pageSize);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.pages.length, 2);</span>
+		});
+		
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should return added page', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			var page = pc.addPage(pageSize);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(page, pc.pages[pc.pages.length - 1]);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should set y, availableHeight and availableWidth on page to initial values', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			pc.y = 123;</span>
+<span class="cstat-no" title="statement not covered" >			pc.availableHeight = 123;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pc.initializePage();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.y, 60);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.availableHeight, 800 - 60 - 60);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(pc.availableWidth, 400 - 40 - 40);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    it('should keep column width when in column group, but set page width', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >      pc.beginColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >      pc.beginColumn(100, 0, {});</span>
+<span class="cstat-no" title="statement not covered" >      pc.initializePage();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      assert.equal(pc.availableWidth, 100);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      pc.completeColumnGroup();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      assert.equal(pc.availableWidth, 400 - 40 - 40);</span>
+    });
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	describe('bottomMostContext', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		it('should return context with larger page if pages are different', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			var result = DocumentContext.bottomMostContext({ page: 2, y: 10 }, { page: 3, y: 5 });</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(result.page, 3);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(result.y, 5);</span>
+		});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		it('should return context with larger y if both contexts have the same page', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >			var result = DocumentContext.bottomMostContext({ page: 3, y: 100 }, { page: 3, y: 50 });</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(result.page, 3);</span>
+<span class="cstat-no" title="statement not covered" >			assert.equal(result.y, 100);</span>
+		});
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	it('should support nesting', <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >		pc.beginColumnGroup();</span>
+<span class="cstat-no" title="statement not covered" >		pc.beginColumn(50)</span>
+<span class="cstat-no" title="statement not covered" >		pc.y = 200;</span>
+<span class="cstat-no" title="statement not covered" >		pc.beginColumn(40);</span>
+<span class="cstat-no" title="statement not covered" >		pc.y = 150;</span>
+<span class="cstat-no" title="statement not covered" >		pc.beginColumn(80);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		pc.beginColumnGroup();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pc.snapshots.length, 2);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pc.snapshots[1].x, 40 + 50 + 40);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		pc.beginColumn(20);</span>
+<span class="cstat-no" title="statement not covered" >		pc.y = 240;</span>
+<span class="cstat-no" title="statement not covered" >		pc.page = 2;</span>
+<span class="cstat-no" title="statement not covered" >		pc.beginColumn(20);</span>
+<span class="cstat-no" title="statement not covered" >		pc.y = 260;</span>
+<span class="cstat-no" title="statement not covered" >		pc.completeColumnGroup();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pc.snapshots.length, 1);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pc.x, 40 + 50 + 40);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pc.page, 2);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pc.y, 240);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		pc.completeColumnGroup();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		assert.equal(pc.snapshots.length, 0);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pc.x, 40);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pc.page, 2);</span>
+<span class="cstat-no" title="statement not covered" >		assert.equal(pc.y, 240);</span>
+	});
+});
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 30 2016 18:38:03 GMT+0000 (WET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
