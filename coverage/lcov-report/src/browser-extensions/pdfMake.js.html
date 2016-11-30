@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/browser-extensions/pdfMake.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/browser-extensions/</a> pdfMake.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.04% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/98</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.13% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/94</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* jslint node: true */
+/* jslint browser: true */
+/* global BlobBuilder */
+'use strict';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >var PdfPrinter = require('../printer');</span>
+<span class="cstat-no" title="statement not covered" >var FileSaver = require('../../libs/FileSaver.js/FileSaver');</span>
+<span class="cstat-no" title="statement not covered" >var saveAs = FileSaver.saveAs;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >var defaultClientFonts = {</span>
+	Roboto: {
+		normal: 'Roboto-Regular.ttf',
+		bold: 'Roboto-Medium.ttf',
+		italics: 'Roboto-Italic.ttf',
+		bolditalics: 'Roboto-Italic.ttf'
+	}
+};
+&nbsp;
+<span class="fstat-no" title="function not covered" >function Document(docDefinition, fonts, vfs) {</span>
+<span class="cstat-no" title="statement not covered" >	this.docDefinition = docDefinition;</span>
+<span class="cstat-no" title="statement not covered" >	this.fonts = fonts || defaultClientFonts;</span>
+<span class="cstat-no" title="statement not covered" >	this.vfs = vfs;</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function canCreatePdf() {</span>
+	// Ensure the browser provides the level of support needed
+<span class="cstat-no" title="statement not covered" >	if ( ! Object.keys ) {</span>
+<span class="cstat-no" title="statement not covered" >		return false;</span>
+	}
+<span class="cstat-no" title="statement not covered" >	return true;</span>
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >Document.prototype._createDoc = <span class="fstat-no" title="function not covered" >function(options, callback) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var printer = new PdfPrinter(this.fonts);</span>
+<span class="cstat-no" title="statement not covered" >	printer.fs.bindFS(this.vfs);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var doc = printer.createPdfKitDocument(this.docDefinition, options);</span>
+<span class="cstat-no" title="statement not covered" >	var chunks = [];</span>
+<span class="cstat-no" title="statement not covered" >	var result;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	doc.on('data', <span class="fstat-no" title="function not covered" >function(chunk) {</span></span>
+<span class="cstat-no" title="statement not covered" >		chunks.push(chunk);</span>
+	});
+<span class="cstat-no" title="statement not covered" >	doc.on('end', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >		result = Buffer.concat(chunks);</span>
+<span class="cstat-no" title="statement not covered" >		callback(result, doc._pdfMakePages);</span>
+	});
+<span class="cstat-no" title="statement not covered" >	doc.end();</span>
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >Document.prototype._getPages = <span class="fstat-no" title="function not covered" >function(options, cb){</span></span>
+<span class="cstat-no" title="statement not covered" >  if (!cb) <span class="cstat-no" title="statement not covered" >throw 'getBuffer is an async method and needs a callback argument';</span></span>
+<span class="cstat-no" title="statement not covered" >  this._createDoc(options, <span class="fstat-no" title="function not covered" >function(ignoreBuffer, pages){</span></span>
+<span class="cstat-no" title="statement not covered" >    cb(pages);</span>
+  });
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >Document.prototype.open = <span class="fstat-no" title="function not covered" >function(message) {</span></span>
+		// we have to open the window immediately and store the reference
+	// otherwise popup blockers will stop us
+<span class="cstat-no" title="statement not covered" >	var win = window.open('', '_blank');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	try {</span>
+<span class="cstat-no" title="statement not covered" >		this.getBuffer(<span class="fstat-no" title="function not covered" >function (result) {</span></span>
+<span class="cstat-no" title="statement not covered" >			var blob;</span>
+<span class="cstat-no" title="statement not covered" >			try {</span>
+<span class="cstat-no" title="statement not covered" >				blob = new Blob([result], { type: 'application/pdf' });</span>
+			} catch (e) {
+				// Old browser which can't handle it without making it an byte array (ie10)
+<span class="cstat-no" title="statement not covered" >				if (e.name == "InvalidStateError") {</span>
+<span class="cstat-no" title="statement not covered" >					var byteArray = new Uint8Array(result);</span>
+<span class="cstat-no" title="statement not covered" >					blob = new Blob([byteArray.buffer], { type: 'application/pdf' });</span>
+				}
+			}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			if (blob) {</span>
+<span class="cstat-no" title="statement not covered" >				var urlCreator = window.URL || window.webkitURL;</span>
+<span class="cstat-no" title="statement not covered" >				var pdfUrl = urlCreator.createObjectURL( blob );</span>
+<span class="cstat-no" title="statement not covered" >				win.location.href = pdfUrl;</span>
+			} else {
+<span class="cstat-no" title="statement not covered" >				throw 'Could not generate blob';</span>
+			}
+		},  { autoPrint: false });
+	} catch(e) {
+<span class="cstat-no" title="statement not covered" >		win.close();</span>
+<span class="cstat-no" title="statement not covered" >		throw e;</span>
+	}
+};
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >Document.prototype.print = <span class="fstat-no" title="function not covered" >function() {</span></span>
+		// we have to open the window immediately and store the reference
+	// otherwise popup blockers will stop us
+<span class="cstat-no" title="statement not covered" >	var win = window.open('', '_blank');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	try {</span>
+<span class="cstat-no" title="statement not covered" >		this.getBuffer(<span class="fstat-no" title="function not covered" >function (result) {</span></span>
+<span class="cstat-no" title="statement not covered" >			var blob;</span>
+<span class="cstat-no" title="statement not covered" >			try {</span>
+<span class="cstat-no" title="statement not covered" >				blob = new Blob([result], { type: 'application/pdf' });</span>
+			} catch (e) {
+				// Old browser which can't handle it without making it an byte array (ie10)
+<span class="cstat-no" title="statement not covered" >				if (e.name == "InvalidStateError") {</span>
+<span class="cstat-no" title="statement not covered" >					var byteArray = new Uint8Array(result);</span>
+<span class="cstat-no" title="statement not covered" >					blob = new Blob([byteArray.buffer], { type: 'application/pdf' });</span>
+				}
+			}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			if (blob) {</span>
+<span class="cstat-no" title="statement not covered" >				var urlCreator = window.URL || window.webkitURL;</span>
+<span class="cstat-no" title="statement not covered" >				var pdfUrl = urlCreator.createObjectURL( blob );</span>
+<span class="cstat-no" title="statement not covered" >				win.location.href = pdfUrl;</span>
+			} else {
+<span class="cstat-no" title="statement not covered" >				throw 'Could not generate blob';</span>
+			}
+		},  { autoPrint: true });
+	} catch(e) {
+<span class="cstat-no" title="statement not covered" >		win.close();</span>
+<span class="cstat-no" title="statement not covered" >		throw e;</span>
+	}
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >Document.prototype.download = <span class="fstat-no" title="function not covered" >function(defaultFileName, cb) {</span></span>
+<span class="cstat-no" title="statement not covered" >   if(typeof defaultFileName === "function") {</span>
+<span class="cstat-no" title="statement not covered" >      cb = defaultFileName;</span>
+<span class="cstat-no" title="statement not covered" >      defaultFileName = null;</span>
+   }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >   defaultFileName = defaultFileName || 'file.pdf';</span>
+<span class="cstat-no" title="statement not covered" >   this.getBuffer(<span class="fstat-no" title="function not covered" >function (result) {</span></span>
+<span class="cstat-no" title="statement not covered" >       var blob;</span>
+<span class="cstat-no" title="statement not covered" >       try {</span>
+<span class="cstat-no" title="statement not covered" >           blob = new Blob([result], { type: 'application/pdf' });</span>
+       }
+       catch (e) {
+           // Old browser which can't handle it without making it an byte array (ie10)
+<span class="cstat-no" title="statement not covered" >           if (e.name == "InvalidStateError") {</span>
+<span class="cstat-no" title="statement not covered" >               var byteArray = new Uint8Array(result);</span>
+<span class="cstat-no" title="statement not covered" >               blob = new Blob([byteArray.buffer], { type: 'application/pdf' });</span>
+           }
+       }
+<span class="cstat-no" title="statement not covered" >       if (blob) {</span>
+<span class="cstat-no" title="statement not covered" >           saveAs(blob, defaultFileName);</span>
+       }
+       else {
+<span class="cstat-no" title="statement not covered" >           throw 'Could not generate blob';</span>
+       }
+<span class="cstat-no" title="statement not covered" >       if (typeof cb === "function") {</span>
+<span class="cstat-no" title="statement not covered" >           cb();</span>
+       }
+   });
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >Document.prototype.getBase64 = <span class="fstat-no" title="function not covered" >function(cb, options) {</span></span>
+<span class="cstat-no" title="statement not covered" >	if (!cb) <span class="cstat-no" title="statement not covered" >throw 'getBase64 is an async method and needs a callback argument';</span></span>
+<span class="cstat-no" title="statement not covered" >	this._createDoc(options, <span class="fstat-no" title="function not covered" >function(buffer) {</span></span>
+<span class="cstat-no" title="statement not covered" >		cb(buffer.toString('base64'));</span>
+	});
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >Document.prototype.getDataUrl = <span class="fstat-no" title="function not covered" >function(cb, options) {</span></span>
+<span class="cstat-no" title="statement not covered" >	if (!cb) <span class="cstat-no" title="statement not covered" >throw 'getDataUrl is an async method and needs a callback argument';</span></span>
+<span class="cstat-no" title="statement not covered" >	this._createDoc(options, <span class="fstat-no" title="function not covered" >function(buffer) {</span></span>
+<span class="cstat-no" title="statement not covered" >		cb('data:application/pdf;base64,' + buffer.toString('base64'));</span>
+	});
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >Document.prototype.getBuffer = <span class="fstat-no" title="function not covered" >function(cb, options) {</span></span>
+<span class="cstat-no" title="statement not covered" >	if (!cb) <span class="cstat-no" title="statement not covered" >throw 'getBuffer is an async method and needs a callback argument';</span></span>
+<span class="cstat-no" title="statement not covered" >	this._createDoc(options, <span class="fstat-no" title="function not covered" >function(buffer){</span></span>
+<span class="cstat-no" title="statement not covered" >    cb(buffer);</span>
+  });
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = {</span>
+	createPdf: <span class="fstat-no" title="function not covered" >function(docDefinition) {</span>
+<span class="cstat-no" title="statement not covered" >		if (canCreatePdf()) {</span>
+<span class="cstat-no" title="statement not covered" >			return new Document(docDefinition, window.pdfMake.fonts, window.pdfMake.vfs);</span>
+		}
+	}
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 30 2016 20:18:22 GMT+0000 (WET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
