@@ -45,6 +45,7 @@ gulp.task('pre-test', function () {
   return gulp.src(['src/**/*.js'])
     // Covering files
     .pipe(istanbul({includeUntested: true}))
+    
     // Force `require` to return covered files
     .pipe(istanbul.hookRequire());
 });
