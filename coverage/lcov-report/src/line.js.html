@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/line.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> line.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.94% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.13% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* jslint node: true */
+'use strict';
+&nbsp;
+/**
+* Creates an instance of Line
+*
+* @constructor
+* @this {Line}
+* @param {Number} Maximum width this line can have
+*/
+<span class="fstat-no" title="function not covered" >function Line(maxWidth) {</span>
+<span class="cstat-no" title="statement not covered" >	this.maxWidth = maxWidth;</span>
+<span class="cstat-no" title="statement not covered" >	this.leadingCut = 0;</span>
+<span class="cstat-no" title="statement not covered" >	this.trailingCut = 0;</span>
+<span class="cstat-no" title="statement not covered" >	this.inlineWidths = 0;</span>
+<span class="cstat-no" title="statement not covered" >	this.inlines = [];</span>
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >Line.prototype.getAscenderHeight = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >	var y = 0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.inlines.forEach(<span class="fstat-no" title="function not covered" >function(inline) {</span></span>
+<span class="cstat-no" title="statement not covered" >		y = Math.max(y, inline.font.ascender / 1000 * inline.fontSize);</span>
+	});
+<span class="cstat-no" title="statement not covered" >	return y;</span>
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >Line.prototype.hasEnoughSpaceForInline = <span class="fstat-no" title="function not covered" >function(inline) {</span></span>
+<span class="cstat-no" title="statement not covered" >	if (this.inlines.length === 0) <span class="cstat-no" title="statement not covered" >return true;</span></span>
+<span class="cstat-no" title="statement not covered" >	if (this.newLineForced) <span class="cstat-no" title="statement not covered" >return false;</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return this.inlineWidths + inline.width - this.leadingCut - (inline.trailingCut || 0) &lt;= this.maxWidth;</span>
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >Line.prototype.addInline = <span class="fstat-no" title="function not covered" >function(inline) {</span></span>
+<span class="cstat-no" title="statement not covered" >	if (this.inlines.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >		this.leadingCut = inline.leadingCut || 0;</span>
+	}
+<span class="cstat-no" title="statement not covered" >	this.trailingCut = inline.trailingCut || 0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	inline.x = this.inlineWidths - this.leadingCut;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.inlines.push(inline);</span>
+<span class="cstat-no" title="statement not covered" >	this.inlineWidths += inline.width;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	if (inline.lineEnd) {</span>
+<span class="cstat-no" title="statement not covered" >		this.newLineForced = true;</span>
+	}
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >Line.prototype.getWidth = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >	return this.inlineWidths - this.leadingCut - this.trailingCut;</span>
+};
+&nbsp;
+/**
+* Returns line height
+* @return {Number}
+*/
+<span class="cstat-no" title="statement not covered" >Line.prototype.getHeight = <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >	var max = 0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.inlines.forEach(<span class="fstat-no" title="function not covered" >function(item) {</span></span>
+<span class="cstat-no" title="statement not covered" >		max = Math.max(max, item.height || 0);</span>
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return max;</span>
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = Line;</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 30 2016 20:45:14 GMT+0000 (WET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
