@@ -58,6 +58,8 @@ In pdfmake the degree of heterogeneity is very less,still it uses one technology
 
 ##b) Test Statistics and Analytics##
 
+![](https://github.com/joaopedrofump/pdfmake-1/blob/master/ESOF-Docs/test-coverage.png)
+
 - **Nr. of Test Cases:**
 339 (281 passing / 58 pending)
 - **Coverage:**
