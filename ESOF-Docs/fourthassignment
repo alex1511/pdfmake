@@ -1,5 +1,0 @@
-#4. Assignment: Verification & Validation#
-
-##b) Test Statistics and Analytics##
-
-In order to further analyze the tests that were already installed by past pdfmake developers, we installed the coverage analysis plugin 'gulp-coverage' in the gulp building file.
