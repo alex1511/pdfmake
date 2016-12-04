@@ -1,0 +1,2285 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/qrEnc.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> qrEnc.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0.86% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/350</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/167</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0.92% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/326</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* jslint node: true */
+'use strict';
+/*jshint -W004 */
+/* qr.js -- QR code generator in Javascript (revision 2011-01-19)
+ * Written by Kang Seonghoon &lt;public+qrjs@mearie.org&gt;.
+ *
+ * This source code is in the public domain; if your jurisdiction does not
+ * recognize the public domain the terms of Creative Commons CC0 license
+ * apply. In the other words, you can always do what you want.
+ */
+&nbsp;
+&nbsp;
+// per-version information (cf. JIS X 0510:2004 pp. 30--36, 71)
+//
+// [0]: the degree of generator polynomial by ECC levels
+// [1]: # of code blocks by ECC levels
+// [2]: left-top positions of alignment patterns
+//
+// the number in this table (in particular, [0]) does not exactly match with
+// the numbers in the specficiation. see augumenteccs below for the reason.
+<span class="cstat-no" title="statement not covered" >var VERSIONS = [</span>
+	null,
+	[[10, 7,17,13], [ 1, 1, 1, 1], []],
+	[[16,10,28,22], [ 1, 1, 1, 1], [4,16]],
+	[[26,15,22,18], [ 1, 1, 2, 2], [4,20]],
+	[[18,20,16,26], [ 2, 1, 4, 2], [4,24]],
+	[[24,26,22,18], [ 2, 1, 4, 4], [4,28]],
+	[[16,18,28,24], [ 4, 2, 4, 4], [4,32]],
+	[[18,20,26,18], [ 4, 2, 5, 6], [4,20,36]],
+	[[22,24,26,22], [ 4, 2, 6, 6], [4,22,40]],
+	[[22,30,24,20], [ 5, 2, 8, 8], [4,24,44]],
+	[[26,18,28,24], [ 5, 4, 8, 8], [4,26,48]],
+	[[30,20,24,28], [ 5, 4,11, 8], [4,28,52]],
+	[[22,24,28,26], [ 8, 4,11,10], [4,30,56]],
+	[[22,26,22,24], [ 9, 4,16,12], [4,32,60]],
+	[[24,30,24,20], [ 9, 4,16,16], [4,24,44,64]],
+	[[24,22,24,30], [10, 6,18,12], [4,24,46,68]],
+	[[28,24,30,24], [10, 6,16,17], [4,24,48,72]],
+	[[28,28,28,28], [11, 6,19,16], [4,28,52,76]],
+	[[26,30,28,28], [13, 6,21,18], [4,28,54,80]],
+	[[26,28,26,26], [14, 7,25,21], [4,28,56,84]],
+	[[26,28,28,30], [16, 8,25,20], [4,32,60,88]],
+	[[26,28,30,28], [17, 8,25,23], [4,26,48,70,92]],
+	[[28,28,24,30], [17, 9,34,23], [4,24,48,72,96]],
+	[[28,30,30,30], [18, 9,30,25], [4,28,52,76,100]],
+	[[28,30,30,30], [20,10,32,27], [4,26,52,78,104]],
+	[[28,26,30,30], [21,12,35,29], [4,30,56,82,108]],
+	[[28,28,30,28], [23,12,37,34], [4,28,56,84,112]],
+	[[28,30,30,30], [25,12,40,34], [4,32,60,88,116]],
+	[[28,30,30,30], [26,13,42,35], [4,24,48,72,96,120]],
+	[[28,30,30,30], [28,14,45,38], [4,28,52,76,100,124]],
+	[[28,30,30,30], [29,15,48,40], [4,24,50,76,102,128]],
+	[[28,30,30,30], [31,16,51,43], [4,28,54,80,106,132]],
+	[[28,30,30,30], [33,17,54,45], [4,32,58,84,110,136]],
+	[[28,30,30,30], [35,18,57,48], [4,28,56,84,112,140]],
+	[[28,30,30,30], [37,19,60,51], [4,32,60,88,116,144]],
+	[[28,30,30,30], [38,19,63,53], [4,28,52,76,100,124,148]],
+	[[28,30,30,30], [40,20,66,56], [4,22,48,74,100,126,152]],
+	[[28,30,30,30], [43,21,70,59], [4,26,52,78,104,130,156]],
+	[[28,30,30,30], [45,22,74,62], [4,30,56,82,108,134,160]],
+	[[28,30,30,30], [47,24,77,65], [4,24,52,80,108,136,164]],
+	[[28,30,30,30], [49,25,81,68], [4,28,56,84,112,140,168]]];
+&nbsp;
+// mode constants (cf. Table 2 in JIS X 0510:2004 p. 16)
+<span class="cstat-no" title="statement not covered" >var MODE_TERMINATOR = 0;</span>
+<span class="cstat-no" title="statement not covered" >var MODE_NUMERIC = 1, MODE_ALPHANUMERIC = 2, MODE_OCTET = 4, MODE_KANJI = 8;</span>
+&nbsp;
+// validation regexps
+<span class="cstat-no" title="statement not covered" >var NUMERIC_REGEXP = /^\d*$/;</span>
+<span class="cstat-no" title="statement not covered" >var ALPHANUMERIC_REGEXP = /^[A-Za-z0-9 $%*+\-./:]*$/;</span>
+<span class="cstat-no" title="statement not covered" >var ALPHANUMERIC_OUT_REGEXP = /^[A-Z0-9 $%*+\-./:]*$/;</span>
+&nbsp;
+// ECC levels (cf. Table 22 in JIS X 0510:2004 p. 45)
+<span class="cstat-no" title="statement not covered" >var ECCLEVEL_L = 1, ECCLEVEL_M = 0, ECCLEVEL_Q = 3, ECCLEVEL_H = 2;</span>
+&nbsp;
+// GF(2^8)-to-integer mapping with a reducing polynomial x^8+x^4+x^3+x^2+1
+// invariant: GF256_MAP[GF256_INVMAP[i]] == i for all i in [1,256)
+<span class="cstat-no" title="statement not covered" >var GF256_MAP = [], GF256_INVMAP = [-1];</span>
+<span class="cstat-no" title="statement not covered" >for (var i = 0, v = 1; i &lt; 255; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >	GF256_MAP.push(v);</span>
+<span class="cstat-no" title="statement not covered" >	GF256_INVMAP[v] = i;</span>
+<span class="cstat-no" title="statement not covered" >	v = (v * 2) ^ (v &gt;= 128 ? 0x11d : 0);</span>
+}
+&nbsp;
+// generator polynomials up to degree 30
+// (should match with polynomials in JIS X 0510:2004 Appendix A)
+//
+// generator polynomial of degree K is product of (x-\alpha^0), (x-\alpha^1),
+// ..., (x-\alpha^(K-1)). by convention, we omit the K-th coefficient (always 1)
+// from the result; also other coefficients are written in terms of the exponent
+// to \alpha to avoid the redundant calculation. (see also calculateecc below.)
+<span class="cstat-no" title="statement not covered" >var GF256_GENPOLY = [[]];</span>
+<span class="cstat-no" title="statement not covered" >for (var i = 0; i &lt; 30; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >	var prevpoly = GF256_GENPOLY[i], poly = [];</span>
+<span class="cstat-no" title="statement not covered" >	for (var j = 0; j &lt;= i; ++j) {</span>
+<span class="cstat-no" title="statement not covered" >		var a = (j &lt; i ? GF256_MAP[prevpoly[j]] : 0);</span>
+<span class="cstat-no" title="statement not covered" >		var b = GF256_MAP[(i + (prevpoly[j-1] || 0)) % 255];</span>
+<span class="cstat-no" title="statement not covered" >		poly.push(GF256_INVMAP[a ^ b]);</span>
+	}
+<span class="cstat-no" title="statement not covered" >	GF256_GENPOLY.push(poly);</span>
+}
+&nbsp;
+// alphanumeric character mapping (cf. Table 5 in JIS X 0510:2004 p. 19)
+<span class="cstat-no" title="statement not covered" >var ALPHANUMERIC_MAP = {};</span>
+<span class="cstat-no" title="statement not covered" >for (var i = 0; i &lt; 45; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >	ALPHANUMERIC_MAP['0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:'.charAt(i)] = i;</span>
+}
+&nbsp;
+// mask functions in terms of row # and column #
+// (cf. Table 20 in JIS X 0510:2004 p. 42)
+<span class="cstat-no" title="statement not covered" >var MASKFUNCS = [</span>
+<span class="fstat-no" title="function not covered" >	function(i,j) {</span> <span class="cstat-no" title="statement not covered" >return (i+j) % 2 === 0; </span>},
+<span class="fstat-no" title="function not covered" >	function(i,j) {</span> <span class="cstat-no" title="statement not covered" >return i % 2 === 0; </span>},
+<span class="fstat-no" title="function not covered" >	function(i,j) {</span> <span class="cstat-no" title="statement not covered" >return j % 3 === 0; </span>},
+<span class="fstat-no" title="function not covered" >	function(i,j) {</span> <span class="cstat-no" title="statement not covered" >return (i+j) % 3 === 0; </span>},
+<span class="fstat-no" title="function not covered" >	function(i,j) {</span> <span class="cstat-no" title="statement not covered" >return (((i/2)|0) + ((j/3)|0)) % 2 === 0; </span>},
+<span class="fstat-no" title="function not covered" >	function(i,j) {</span> <span class="cstat-no" title="statement not covered" >return (i*j) % 2 + (i*j) % 3 === 0; </span>},
+<span class="fstat-no" title="function not covered" >	function(i,j) {</span> <span class="cstat-no" title="statement not covered" >return ((i*j) % 2 + (i*j) % 3) % 2 === 0; </span>},
+<span class="fstat-no" title="function not covered" >	function(i,j) {</span> <span class="cstat-no" title="statement not covered" >return ((i+j) % 2 + (i*j) % 3) % 2 === 0; </span>}];
+&nbsp;
+// returns true when the version information has to be embeded.
+<span class="cstat-no" title="statement not covered" >var needsverinfo = <span class="fstat-no" title="function not covered" >function(ver) {</span> <span class="cstat-no" title="statement not covered" >return ver &gt; 6; </span>};</span>
+&nbsp;
+// returns the size of entire QR code for given version.
+<span class="cstat-no" title="statement not covered" >var getsizebyver = <span class="fstat-no" title="function not covered" >function(ver) {</span> <span class="cstat-no" title="statement not covered" >return 4 * ver + 17; </span>};</span>
+&nbsp;
+// returns the number of bits available for code words in this version.
+<span class="cstat-no" title="statement not covered" >var nfullbits = <span class="fstat-no" title="function not covered" >function(ver) {</span></span>
+	/*
+	 * |&lt;--------------- n ---------------&gt;|
+	 * |        |&lt;----- n-17 ----&gt;|        |
+	 * +-------+                ///+-------+ ----
+	 * |       |                ///|       |    ^
+	 * |  9x9  |       @@@@@    ///|  9x8  |    |
+	 * |       | # # # @5x5@ # # # |       |    |
+	 * +-------+       @@@@@       +-------+    |
+	 *       #                               ---|
+	 *                                        ^ |
+	 *       #                                |
+	 *     @@@@@       @@@@@       @@@@@      | n
+	 *     @5x5@       @5x5@       @5x5@   n-17
+	 *     @@@@@       @@@@@       @@@@@      | |
+	 *       #                                | |
+	 * //////                                 v |
+	 * //////#                               ---|
+	 * +-------+       @@@@@       @@@@@        |
+	 * |       |       @5x5@       @5x5@        |
+	 * |  8x9  |       @@@@@       @@@@@        |
+	 * |       |                                v
+	 * +-------+                             ----
+	 *
+	 * when the entire code has n^2 modules and there are m^2-3 alignment
+	 * patterns, we have:
+	 * - 225 (= 9x9 + 9x8 + 8x9) modules for finder patterns and
+	 *   format information;
+	 * - 2n-34 (= 2(n-17)) modules for timing patterns;
+	 * - 36 (= 3x6 + 6x3) modules for version information, if any;
+	 * - 25m^2-75 (= (m^2-3)(5x5)) modules for alignment patterns
+	 *   if any, but 10m-20 (= 2(m-2)x5) of them overlaps with
+	 *   timing patterns.
+	 */
+<span class="cstat-no" title="statement not covered" >	var v = VERSIONS[ver];</span>
+<span class="cstat-no" title="statement not covered" >	var nbits = 16*ver*ver + 128*ver + 64; </span>// finder, timing and format info.
+<span class="cstat-no" title="statement not covered" >	if (needsverinfo(ver)) <span class="cstat-no" title="statement not covered" >nbits -= 36; </span></span>// version information
+<span class="cstat-no" title="statement not covered" >	if (v[2].length) { // alignment patterns</span>
+<span class="cstat-no" title="statement not covered" >		nbits -= 25 * v[2].length * v[2].length - 10 * v[2].length - 55;</span>
+	}
+<span class="cstat-no" title="statement not covered" >	return nbits;</span>
+};
+&nbsp;
+// returns the number of bits available for data portions (i.e. excludes ECC
+// bits but includes mode and length bits) in this version and ECC level.
+<span class="cstat-no" title="statement not covered" >var ndatabits = <span class="fstat-no" title="function not covered" >function(ver, ecclevel) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var nbits = nfullbits(ver) &amp; ~7; </span>// no sub-octet code words
+<span class="cstat-no" title="statement not covered" >	var v = VERSIONS[ver];</span>
+<span class="cstat-no" title="statement not covered" >	nbits -= 8 * v[0][ecclevel] * v[1][ecclevel]; </span>// ecc bits
+<span class="cstat-no" title="statement not covered" >	return nbits;</span>
+};
+&nbsp;
+// returns the number of bits required for the length of data.
+// (cf. Table 3 in JIS X 0510:2004 p. 16)
+<span class="cstat-no" title="statement not covered" >var ndatalenbits = <span class="fstat-no" title="function not covered" >function(ver, mode) {</span></span>
+<span class="cstat-no" title="statement not covered" >	switch (mode) {</span>
+	case MODE_NUMERIC: <span class="cstat-no" title="statement not covered" >return (ver &lt; 10 ? 10 : ver &lt; 27 ? 12 : 14);</span>
+	case MODE_ALPHANUMERIC: <span class="cstat-no" title="statement not covered" >return (ver &lt; 10 ? 9 : ver &lt; 27 ? 11 : 13);</span>
+	case MODE_OCTET: <span class="cstat-no" title="statement not covered" >return (ver &lt; 10 ? 8 : 16);</span>
+	case MODE_KANJI: <span class="cstat-no" title="statement not covered" >return (ver &lt; 10 ? 8 : ver &lt; 27 ? 10 : 12);</span>
+	}
+};
+&nbsp;
+// returns the maximum length of data possible in given configuration.
+<span class="cstat-no" title="statement not covered" >var getmaxdatalen = <span class="fstat-no" title="function not covered" >function(ver, mode, ecclevel) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var nbits = ndatabits(ver, ecclevel) - 4 - ndatalenbits(ver, mode); </span>// 4 for mode bits
+<span class="cstat-no" title="statement not covered" >	switch (mode) {</span>
+	case MODE_NUMERIC:
+<span class="cstat-no" title="statement not covered" >		return ((nbits/10) | 0) * 3 + (nbits%10 &lt; 4 ? 0 : nbits%10 &lt; 7 ? 1 : 2);</span>
+	case MODE_ALPHANUMERIC:
+<span class="cstat-no" title="statement not covered" >		return ((nbits/11) | 0) * 2 + (nbits%11 &lt; 6 ? 0 : 1);</span>
+	case MODE_OCTET:
+<span class="cstat-no" title="statement not covered" >		return (nbits/8) | 0;</span>
+	case MODE_KANJI:
+<span class="cstat-no" title="statement not covered" >		return (nbits/13) | 0;</span>
+	}
+};
+&nbsp;
+// checks if the given data can be encoded in given mode, and returns
+// the converted data for the further processing if possible. otherwise
+// returns null.
+//
+// this function does not check the length of data; it is a duty of
+// encode function below (as it depends on the version and ECC level too).
+<span class="cstat-no" title="statement not covered" >var validatedata = <span class="fstat-no" title="function not covered" >function(mode, data) {</span></span>
+<span class="cstat-no" title="statement not covered" >	switch (mode) {</span>
+	case MODE_NUMERIC:
+<span class="cstat-no" title="statement not covered" >		if (!data.match(NUMERIC_REGEXP)) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+<span class="cstat-no" title="statement not covered" >		return data;</span>
+&nbsp;
+	case MODE_ALPHANUMERIC:
+<span class="cstat-no" title="statement not covered" >		if (!data.match(ALPHANUMERIC_REGEXP)) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+<span class="cstat-no" title="statement not covered" >		return data.toUpperCase();</span>
+&nbsp;
+	case MODE_OCTET:
+<span class="cstat-no" title="statement not covered" >		if (typeof data === 'string') { // encode as utf-8 string</span>
+<span class="cstat-no" title="statement not covered" >			var newdata = [];</span>
+<span class="cstat-no" title="statement not covered" >			for (var i = 0; i &lt; data.length; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >				var ch = data.charCodeAt(i);</span>
+<span class="cstat-no" title="statement not covered" >				if (ch &lt; 0x80) {</span>
+<span class="cstat-no" title="statement not covered" >					newdata.push(ch);</span>
+				} else <span class="cstat-no" title="statement not covered" >if (ch &lt; 0x800) {</span>
+<span class="cstat-no" title="statement not covered" >					newdata.push(0xc0 | (ch &gt;&gt; 6),</span>
+						0x80 | (ch &amp; 0x3f));
+				} else <span class="cstat-no" title="statement not covered" >if (ch &lt; 0x10000) {</span>
+<span class="cstat-no" title="statement not covered" >					newdata.push(0xe0 | (ch &gt;&gt; 12),</span>
+						0x80 | ((ch &gt;&gt; 6) &amp; 0x3f),
+						0x80 | (ch &amp; 0x3f));
+				} else {
+<span class="cstat-no" title="statement not covered" >					newdata.push(0xf0 | (ch &gt;&gt; 18),</span>
+						0x80 | ((ch &gt;&gt; 12) &amp; 0x3f),
+						0x80 | ((ch &gt;&gt; 6) &amp; 0x3f),
+						0x80 | (ch &amp; 0x3f));
+				}
+			}
+<span class="cstat-no" title="statement not covered" >			return newdata;</span>
+		} else {
+<span class="cstat-no" title="statement not covered" >			return data;</span>
+		}
+	}
+};
+&nbsp;
+// returns the code words (sans ECC bits) for given data and configurations.
+// requires data to be preprocessed by validatedata. no length check is
+// performed, and everything has to be checked before calling this function.
+<span class="cstat-no" title="statement not covered" >var encode = <span class="fstat-no" title="function not covered" >function(ver, mode, data, maxbuflen) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var buf = [];</span>
+<span class="cstat-no" title="statement not covered" >	var bits = 0, remaining = 8;</span>
+<span class="cstat-no" title="statement not covered" >	var datalen = data.length;</span>
+&nbsp;
+	// this function is intentionally no-op when n=0.
+<span class="cstat-no" title="statement not covered" >	var pack = <span class="fstat-no" title="function not covered" >function(x, n) {</span></span>
+<span class="cstat-no" title="statement not covered" >		if (n &gt;= remaining) {</span>
+<span class="cstat-no" title="statement not covered" >			buf.push(bits | (x &gt;&gt; (n -= remaining)));</span>
+<span class="cstat-no" title="statement not covered" >			while (n &gt;= 8) <span class="cstat-no" title="statement not covered" >buf.push((x &gt;&gt; (n -= 8)) &amp; 255);</span></span>
+<span class="cstat-no" title="statement not covered" >			bits = 0;</span>
+<span class="cstat-no" title="statement not covered" >			remaining = 8;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		if (n &gt; 0) <span class="cstat-no" title="statement not covered" >bits |= (x &amp; ((1 &lt;&lt; n) - 1)) &lt;&lt; (remaining -= n);</span></span>
+	};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var nlenbits = ndatalenbits(ver, mode);</span>
+<span class="cstat-no" title="statement not covered" >	pack(mode, 4);</span>
+<span class="cstat-no" title="statement not covered" >	pack(datalen, nlenbits);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	switch (mode) {</span>
+	case MODE_NUMERIC:
+<span class="cstat-no" title="statement not covered" >		for (var i = 2; i &lt; datalen; i += 3) {</span>
+<span class="cstat-no" title="statement not covered" >			pack(parseInt(data.substring(i-2,i+1), 10), 10);</span>
+		}
+<span class="cstat-no" title="statement not covered" >		pack(parseInt(data.substring(i-2), 10), [0,4,7][datalen%3]);</span>
+<span class="cstat-no" title="statement not covered" >		break;</span>
+&nbsp;
+	case MODE_ALPHANUMERIC:
+<span class="cstat-no" title="statement not covered" >		for (var i = 1; i &lt; datalen; i += 2) {</span>
+<span class="cstat-no" title="statement not covered" >			pack(ALPHANUMERIC_MAP[data.charAt(i-1)] * 45 +</span>
+				ALPHANUMERIC_MAP[data.charAt(i)], 11);
+		}
+<span class="cstat-no" title="statement not covered" >		if (datalen % 2 == 1) {</span>
+<span class="cstat-no" title="statement not covered" >			pack(ALPHANUMERIC_MAP[data.charAt(i-1)], 6);</span>
+		}
+<span class="cstat-no" title="statement not covered" >		break;</span>
+&nbsp;
+	case MODE_OCTET:
+<span class="cstat-no" title="statement not covered" >		for (var i = 0; i &lt; datalen; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >			pack(data[i], 8);</span>
+		}
+<span class="cstat-no" title="statement not covered" >		break;</span>
+	}
+&nbsp;
+	// final bits. it is possible that adding terminator causes the buffer
+	// to overflow, but then the buffer truncated to the maximum size will
+	// be valid as the truncated terminator mode bits and padding is
+	// identical in appearance (cf. JIS X 0510:2004 sec 8.4.8).
+<span class="cstat-no" title="statement not covered" >	pack(MODE_TERMINATOR, 4);</span>
+<span class="cstat-no" title="statement not covered" >	if (remaining &lt; 8) <span class="cstat-no" title="statement not covered" >buf.push(bits);</span></span>
+&nbsp;
+	// the padding to fill up the remaining space. we should not add any
+	// words when the overflow already occurred.
+<span class="cstat-no" title="statement not covered" >	while (buf.length + 1 &lt; maxbuflen) <span class="cstat-no" title="statement not covered" >buf.push(0xec, 0x11);</span></span>
+<span class="cstat-no" title="statement not covered" >	if (buf.length &lt; maxbuflen) <span class="cstat-no" title="statement not covered" >buf.push(0xec);</span></span>
+<span class="cstat-no" title="statement not covered" >	return buf;</span>
+};
+&nbsp;
+// calculates ECC code words for given code words and generator polynomial.
+//
+// this is quite similar to CRC calculation as both Reed-Solomon and CRC use
+// the certain kind of cyclic codes, which is effectively the division of
+// zero-augumented polynomial by the generator polynomial. the only difference
+// is that Reed-Solomon uses GF(2^8), instead of CRC's GF(2), and Reed-Solomon
+// uses the different generator polynomial than CRC's.
+<span class="cstat-no" title="statement not covered" >var calculateecc = <span class="fstat-no" title="function not covered" >function(poly, genpoly) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var modulus = poly.slice(0);</span>
+<span class="cstat-no" title="statement not covered" >	var polylen = poly.length, genpolylen = genpoly.length;</span>
+<span class="cstat-no" title="statement not covered" >	for (var i = 0; i &lt; genpolylen; ++i) <span class="cstat-no" title="statement not covered" >modulus.push(0);</span></span>
+<span class="cstat-no" title="statement not covered" >	for (var i = 0; i &lt; polylen; ) {</span>
+<span class="cstat-no" title="statement not covered" >		var quotient = GF256_INVMAP[modulus[i++]];</span>
+<span class="cstat-no" title="statement not covered" >		if (quotient &gt;= 0) {</span>
+<span class="cstat-no" title="statement not covered" >			for (var j = 0; j &lt; genpolylen; ++j) {</span>
+<span class="cstat-no" title="statement not covered" >				modulus[i+j] ^= GF256_MAP[(quotient + genpoly[j]) % 255];</span>
+			}
+		}
+	}
+<span class="cstat-no" title="statement not covered" >	return modulus.slice(polylen);</span>
+};
+&nbsp;
+// auguments ECC code words to given code words. the resulting words are
+// ready to be encoded in the matrix.
+//
+// the much of actual augumenting procedure follows JIS X 0510:2004 sec 8.7.
+// the code is simplified using the fact that the size of each code &amp; ECC
+// blocks is almost same; for example, when we have 4 blocks and 46 data words
+// the number of code words in those blocks are 11, 11, 12, 12 respectively.
+<span class="cstat-no" title="statement not covered" >var augumenteccs = <span class="fstat-no" title="function not covered" >function(poly, nblocks, genpoly) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var subsizes = [];</span>
+<span class="cstat-no" title="statement not covered" >	var subsize = (poly.length / nblocks) | 0, subsize0 = 0;</span>
+<span class="cstat-no" title="statement not covered" >	var pivot = nblocks - poly.length % nblocks;</span>
+<span class="cstat-no" title="statement not covered" >	for (var i = 0; i &lt; pivot; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >		subsizes.push(subsize0);</span>
+<span class="cstat-no" title="statement not covered" >		subsize0 += subsize;</span>
+	}
+<span class="cstat-no" title="statement not covered" >	for (var i = pivot; i &lt; nblocks; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >		subsizes.push(subsize0);</span>
+<span class="cstat-no" title="statement not covered" >		subsize0 += subsize+1;</span>
+	}
+<span class="cstat-no" title="statement not covered" >	subsizes.push(subsize0);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var eccs = [];</span>
+<span class="cstat-no" title="statement not covered" >	for (var i = 0; i &lt; nblocks; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >		eccs.push(calculateecc(poly.slice(subsizes[i], subsizes[i+1]), genpoly));</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var result = [];</span>
+<span class="cstat-no" title="statement not covered" >	var nitemsperblock = (poly.length / nblocks) | 0;</span>
+<span class="cstat-no" title="statement not covered" >	for (var i = 0; i &lt; nitemsperblock; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >		for (var j = 0; j &lt; nblocks; ++j) {</span>
+<span class="cstat-no" title="statement not covered" >			result.push(poly[subsizes[j] + i]);</span>
+		}
+	}
+<span class="cstat-no" title="statement not covered" >	for (var j = pivot; j &lt; nblocks; ++j) {</span>
+<span class="cstat-no" title="statement not covered" >		result.push(poly[subsizes[j+1] - 1]);</span>
+	}
+<span class="cstat-no" title="statement not covered" >	for (var i = 0; i &lt; genpoly.length; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >		for (var j = 0; j &lt; nblocks; ++j) {</span>
+<span class="cstat-no" title="statement not covered" >			result.push(eccs[j][i]);</span>
+		}
+	}
+<span class="cstat-no" title="statement not covered" >	return result;</span>
+};
+&nbsp;
+// auguments BCH(p+q,q) code to the polynomial over GF(2), given the proper
+// genpoly. the both input and output are in binary numbers, and unlike
+// calculateecc genpoly should include the 1 bit for the highest degree.
+//
+// actual polynomials used for this procedure are as follows:
+// - p=10, q=5, genpoly=x^10+x^8+x^5+x^4+x^2+x+1 (JIS X 0510:2004 Appendix C)
+// - p=18, q=6, genpoly=x^12+x^11+x^10+x^9+x^8+x^5+x^2+1 (ibid. Appendix D)
+<span class="cstat-no" title="statement not covered" >var augumentbch = <span class="fstat-no" title="function not covered" >function(poly, p, genpoly, q) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var modulus = poly &lt;&lt; q;</span>
+<span class="cstat-no" title="statement not covered" >	for (var i = p - 1; i &gt;= 0; --i) {</span>
+<span class="cstat-no" title="statement not covered" >		if ((modulus &gt;&gt; (q+i)) &amp; 1) <span class="cstat-no" title="statement not covered" >modulus ^= genpoly &lt;&lt; i;</span></span>
+	}
+<span class="cstat-no" title="statement not covered" >	return (poly &lt;&lt; q) | modulus;</span>
+};
+&nbsp;
+// creates the base matrix for given version. it returns two matrices, one of
+// them is the actual one and the another represents the "reserved" portion
+// (e.g. finder and timing patterns) of the matrix.
+//
+// some entries in the matrix may be undefined, rather than 0 or 1. this is
+// intentional (no initialization needed!), and putdata below will fill
+// the remaining ones.
+<span class="cstat-no" title="statement not covered" >var makebasematrix = <span class="fstat-no" title="function not covered" >function(ver) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var v = VERSIONS[ver], n = getsizebyver(ver);</span>
+<span class="cstat-no" title="statement not covered" >	var matrix = [], reserved = [];</span>
+<span class="cstat-no" title="statement not covered" >	for (var i = 0; i &lt; n; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >		matrix.push([]);</span>
+<span class="cstat-no" title="statement not covered" >		reserved.push([]);</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var blit = <span class="fstat-no" title="function not covered" >function(y, x, h, w, bits) {</span></span>
+<span class="cstat-no" title="statement not covered" >		for (var i = 0; i &lt; h; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >			for (var j = 0; j &lt; w; ++j) {</span>
+<span class="cstat-no" title="statement not covered" >				matrix[y+i][x+j] = (bits[i] &gt;&gt; j) &amp; 1;</span>
+<span class="cstat-no" title="statement not covered" >				reserved[y+i][x+j] = 1;</span>
+			}
+		}
+	};
+&nbsp;
+	// finder patterns and a part of timing patterns
+	// will also mark the format information area (not yet written) as reserved.
+<span class="cstat-no" title="statement not covered" >	blit(0, 0, 9, 9, [0x7f, 0x41, 0x5d, 0x5d, 0x5d, 0x41, 0x17f, 0x00, 0x40]);</span>
+<span class="cstat-no" title="statement not covered" >	blit(n-8, 0, 8, 9, [0x100, 0x7f, 0x41, 0x5d, 0x5d, 0x5d, 0x41, 0x7f]);</span>
+<span class="cstat-no" title="statement not covered" >	blit(0, n-8, 9, 8, [0xfe, 0x82, 0xba, 0xba, 0xba, 0x82, 0xfe, 0x00, 0x00]);</span>
+&nbsp;
+	// the rest of timing patterns
+<span class="cstat-no" title="statement not covered" >	for (var i = 9; i &lt; n-8; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >		matrix[6][i] = matrix[i][6] = ~i &amp; 1;</span>
+<span class="cstat-no" title="statement not covered" >		reserved[6][i] = reserved[i][6] = 1;</span>
+	}
+&nbsp;
+	// alignment patterns
+<span class="cstat-no" title="statement not covered" >	var aligns = v[2], m = aligns.length;</span>
+<span class="cstat-no" title="statement not covered" >	for (var i = 0; i &lt; m; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >		var minj = (i===0 || i===m-1 ? 1 : 0), maxj = (i===0 ? m-1 : m);</span>
+<span class="cstat-no" title="statement not covered" >		for (var j = minj; j &lt; maxj; ++j) {</span>
+<span class="cstat-no" title="statement not covered" >			blit(aligns[i], aligns[j], 5, 5, [0x1f, 0x11, 0x15, 0x11, 0x1f]);</span>
+		}
+	}
+&nbsp;
+	// version information
+<span class="cstat-no" title="statement not covered" >	if (needsverinfo(ver)) {</span>
+<span class="cstat-no" title="statement not covered" >		var code = augumentbch(ver, 6, 0x1f25, 12);</span>
+<span class="cstat-no" title="statement not covered" >		var k = 0;</span>
+<span class="cstat-no" title="statement not covered" >		for (var i = 0; i &lt; 6; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >			for (var j = 0; j &lt; 3; ++j) {</span>
+<span class="cstat-no" title="statement not covered" >				matrix[i][(n-11)+j] = matrix[(n-11)+j][i] = (code &gt;&gt; k++) &amp; 1;</span>
+<span class="cstat-no" title="statement not covered" >				reserved[i][(n-11)+j] = reserved[(n-11)+j][i] = 1;</span>
+			}
+		}
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return {matrix: matrix, reserved: reserved};</span>
+};
+&nbsp;
+// fills the data portion (i.e. unmarked in reserved) of the matrix with given
+// code words. the size of code words should be no more than available bits,
+// and remaining bits are padded to 0 (cf. JIS X 0510:2004 sec 8.7.3).
+<span class="cstat-no" title="statement not covered" >var putdata = <span class="fstat-no" title="function not covered" >function(matrix, reserved, buf) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var n = matrix.length;</span>
+<span class="cstat-no" title="statement not covered" >	var k = 0, dir = -1;</span>
+<span class="cstat-no" title="statement not covered" >	for (var i = n-1; i &gt;= 0; i -= 2) {</span>
+<span class="cstat-no" title="statement not covered" >		if (i == 6) <span class="cstat-no" title="statement not covered" >--i; </span></span>// skip the entire timing pattern column
+<span class="cstat-no" title="statement not covered" >		var jj = (dir &lt; 0 ? n-1 : 0);</span>
+<span class="cstat-no" title="statement not covered" >		for (var j = 0; j &lt; n; ++j) {</span>
+<span class="cstat-no" title="statement not covered" >			for (var ii = i; ii &gt; i-2; --ii) {</span>
+<span class="cstat-no" title="statement not covered" >				if (!reserved[jj][ii]) {</span>
+					// may overflow, but (undefined &gt;&gt; x)
+					// is 0 so it will auto-pad to zero.
+<span class="cstat-no" title="statement not covered" >					matrix[jj][ii] = (buf[k &gt;&gt; 3] &gt;&gt; (~k&amp;7)) &amp; 1;</span>
+<span class="cstat-no" title="statement not covered" >					++k;</span>
+				}
+			}
+<span class="cstat-no" title="statement not covered" >			jj += dir;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		dir = -dir;</span>
+	}
+<span class="cstat-no" title="statement not covered" >	return matrix;</span>
+};
+&nbsp;
+// XOR-masks the data portion of the matrix. repeating the call with the same
+// arguments will revert the prior call (convenient in the matrix evaluation).
+<span class="cstat-no" title="statement not covered" >var maskdata = <span class="fstat-no" title="function not covered" >function(matrix, reserved, mask) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var maskf = MASKFUNCS[mask];</span>
+<span class="cstat-no" title="statement not covered" >	var n = matrix.length;</span>
+<span class="cstat-no" title="statement not covered" >	for (var i = 0; i &lt; n; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >		for (var j = 0; j &lt; n; ++j) {</span>
+<span class="cstat-no" title="statement not covered" >			if (!reserved[i][j]) <span class="cstat-no" title="statement not covered" >matrix[i][j] ^= maskf(i,j);</span></span>
+		}
+	}
+<span class="cstat-no" title="statement not covered" >	return matrix;</span>
+};
+&nbsp;
+// puts the format information.
+<span class="cstat-no" title="statement not covered" >var putformatinfo = <span class="fstat-no" title="function not covered" >function(matrix, reserved, ecclevel, mask) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var n = matrix.length;</span>
+<span class="cstat-no" title="statement not covered" >	var code = augumentbch((ecclevel &lt;&lt; 3) | mask, 5, 0x537, 10) ^ 0x5412;</span>
+<span class="cstat-no" title="statement not covered" >	for (var i = 0; i &lt; 15; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >		var r = [0,1,2,3,4,5,7,8,n-7,n-6,n-5,n-4,n-3,n-2,n-1][i];</span>
+<span class="cstat-no" title="statement not covered" >		var c = [n-1,n-2,n-3,n-4,n-5,n-6,n-7,n-8,7,5,4,3,2,1,0][i];</span>
+<span class="cstat-no" title="statement not covered" >		matrix[r][8] = matrix[8][c] = (code &gt;&gt; i) &amp; 1;</span>
+		// we don't have to mark those bits reserved; always done
+		// in makebasematrix above.
+	}
+<span class="cstat-no" title="statement not covered" >	return matrix;</span>
+};
+&nbsp;
+// evaluates the resulting matrix and returns the score (lower is better).
+// (cf. JIS X 0510:2004 sec 8.8.2)
+//
+// the evaluation procedure tries to avoid the problematic patterns naturally
+// occuring from the original matrix. for example, it penaltizes the patterns
+// which just look like the finder pattern which will confuse the decoder.
+// we choose the mask which results in the lowest score among 8 possible ones.
+//
+// note: zxing seems to use the same procedure and in many cases its choice
+// agrees to ours, but sometimes it does not. practically it doesn't matter.
+<span class="cstat-no" title="statement not covered" >var evaluatematrix = <span class="fstat-no" title="function not covered" >function(matrix) {</span></span>
+	// N1+(k-5) points for each consecutive row of k same-colored modules,
+	// where k &gt;= 5. no overlapping row counts.
+<span class="cstat-no" title="statement not covered" >	var PENALTY_CONSECUTIVE = 3;</span>
+	// N2 points for each 2x2 block of same-colored modules.
+	// overlapping block does count.
+<span class="cstat-no" title="statement not covered" >	var PENALTY_TWOBYTWO = 3;</span>
+	// N3 points for each pattern with &gt;4W:1B:1W:3B:1W:1B or
+	// 1B:1W:3B:1W:1B:&gt;4W, or their multiples (e.g. highly unlikely,
+	// but 13W:3B:3W:9B:3W:3B counts).
+<span class="cstat-no" title="statement not covered" >	var PENALTY_FINDERLIKE = 40;</span>
+	// N4*k points for every (5*k)% deviation from 50% black density.
+	// i.e. k=1 for 55~60% and 40~45%, k=2 for 60~65% and 35~40%, etc.
+<span class="cstat-no" title="statement not covered" >	var PENALTY_DENSITY = 10;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var evaluategroup = <span class="fstat-no" title="function not covered" >function(groups) {</span> // assumes [W,B,W,B,W,...,B,W]</span>
+<span class="cstat-no" title="statement not covered" >		var score = 0;</span>
+<span class="cstat-no" title="statement not covered" >		for (var i = 0; i &lt; groups.length; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >			if (groups[i] &gt;= 5) <span class="cstat-no" title="statement not covered" >score += PENALTY_CONSECUTIVE + (groups[i]-5);</span></span>
+		}
+<span class="cstat-no" title="statement not covered" >		for (var i = 5; i &lt; groups.length; i += 2) {</span>
+<span class="cstat-no" title="statement not covered" >			var p = groups[i];</span>
+<span class="cstat-no" title="statement not covered" >			if (groups[i-1] == p &amp;&amp; groups[i-2] == 3*p &amp;&amp; groups[i-3] == p &amp;&amp;</span>
+					groups[i-4] == p &amp;&amp; (groups[i-5] &gt;= 4*p || groups[i+1] &gt;= 4*p)) {
+				// this part differs from zxing...
+<span class="cstat-no" title="statement not covered" >				score += PENALTY_FINDERLIKE;</span>
+			}
+		}
+<span class="cstat-no" title="statement not covered" >		return score;</span>
+	};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var n = matrix.length;</span>
+<span class="cstat-no" title="statement not covered" >	var score = 0, nblacks = 0;</span>
+<span class="cstat-no" title="statement not covered" >	for (var i = 0; i &lt; n; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >		var row = matrix[i];</span>
+<span class="cstat-no" title="statement not covered" >		var groups;</span>
+&nbsp;
+		// evaluate the current row
+<span class="cstat-no" title="statement not covered" >		groups = [0]; </span>// the first empty group of white
+<span class="cstat-no" title="statement not covered" >		for (var j = 0; j &lt; n; ) {</span>
+<span class="cstat-no" title="statement not covered" >			var k;</span>
+<span class="cstat-no" title="statement not covered" >			for (k = 0; j &lt; n &amp;&amp; row[j]; ++k) <span class="cstat-no" title="statement not covered" >++j;</span></span>
+<span class="cstat-no" title="statement not covered" >			groups.push(k);</span>
+<span class="cstat-no" title="statement not covered" >			for (k = 0; j &lt; n &amp;&amp; !row[j]; ++k) <span class="cstat-no" title="statement not covered" >++j;</span></span>
+<span class="cstat-no" title="statement not covered" >			groups.push(k);</span>
+		}
+<span class="cstat-no" title="statement not covered" >		score += evaluategroup(groups);</span>
+&nbsp;
+		// evaluate the current column
+<span class="cstat-no" title="statement not covered" >		groups = [0];</span>
+<span class="cstat-no" title="statement not covered" >		for (var j = 0; j &lt; n; ) {</span>
+<span class="cstat-no" title="statement not covered" >			var k;</span>
+<span class="cstat-no" title="statement not covered" >			for (k = 0; j &lt; n &amp;&amp; matrix[j][i]; ++k) <span class="cstat-no" title="statement not covered" >++j;</span></span>
+<span class="cstat-no" title="statement not covered" >			groups.push(k);</span>
+<span class="cstat-no" title="statement not covered" >			for (k = 0; j &lt; n &amp;&amp; !matrix[j][i]; ++k) <span class="cstat-no" title="statement not covered" >++j;</span></span>
+<span class="cstat-no" title="statement not covered" >			groups.push(k);</span>
+		}
+<span class="cstat-no" title="statement not covered" >		score += evaluategroup(groups);</span>
+&nbsp;
+		// check the 2x2 box and calculate the density
+<span class="cstat-no" title="statement not covered" >		var nextrow = matrix[i+1] || [];</span>
+<span class="cstat-no" title="statement not covered" >		nblacks += row[0];</span>
+<span class="cstat-no" title="statement not covered" >		for (var j = 1; j &lt; n; ++j) {</span>
+<span class="cstat-no" title="statement not covered" >			var p = row[j];</span>
+<span class="cstat-no" title="statement not covered" >			nblacks += p;</span>
+			// at least comparison with next row should be strict...
+<span class="cstat-no" title="statement not covered" >			if (row[j-1] == p &amp;&amp; nextrow[j] === p &amp;&amp; nextrow[j-1] === p) {</span>
+<span class="cstat-no" title="statement not covered" >				score += PENALTY_TWOBYTWO;</span>
+			}
+		}
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	score += PENALTY_DENSITY * ((Math.abs(nblacks / n / n - 0.5) / 0.05) | 0);</span>
+<span class="cstat-no" title="statement not covered" >	return score;</span>
+};
+&nbsp;
+// returns the fully encoded QR code matrix which contains given data.
+// it also chooses the best mask automatically when mask is -1.
+<span class="cstat-no" title="statement not covered" >var generate = <span class="fstat-no" title="function not covered" >function(data, ver, mode, ecclevel, mask) {</span></span>
+<span class="cstat-no" title="statement not covered" >	var v = VERSIONS[ver];</span>
+<span class="cstat-no" title="statement not covered" >	var buf = encode(ver, mode, data, ndatabits(ver, ecclevel) &gt;&gt; 3);</span>
+<span class="cstat-no" title="statement not covered" >	buf = augumenteccs(buf, v[1][ecclevel], GF256_GENPOLY[v[0][ecclevel]]);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var result = makebasematrix(ver);</span>
+<span class="cstat-no" title="statement not covered" >	var matrix = result.matrix, reserved = result.reserved;</span>
+<span class="cstat-no" title="statement not covered" >	putdata(matrix, reserved, buf);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	if (mask &lt; 0) {</span>
+		// find the best mask
+<span class="cstat-no" title="statement not covered" >		maskdata(matrix, reserved, 0);</span>
+<span class="cstat-no" title="statement not covered" >		putformatinfo(matrix, reserved, ecclevel, 0);</span>
+<span class="cstat-no" title="statement not covered" >		var bestmask = 0, bestscore = evaluatematrix(matrix);</span>
+<span class="cstat-no" title="statement not covered" >		maskdata(matrix, reserved, 0);</span>
+<span class="cstat-no" title="statement not covered" >		for (mask = 1; mask &lt; 8; ++mask) {</span>
+<span class="cstat-no" title="statement not covered" >			maskdata(matrix, reserved, mask);</span>
+<span class="cstat-no" title="statement not covered" >			putformatinfo(matrix, reserved, ecclevel, mask);</span>
+<span class="cstat-no" title="statement not covered" >			var score = evaluatematrix(matrix);</span>
+<span class="cstat-no" title="statement not covered" >			if (bestscore &gt; score) {</span>
+<span class="cstat-no" title="statement not covered" >				bestscore = score;</span>
+<span class="cstat-no" title="statement not covered" >				bestmask = mask;</span>
+			}
+<span class="cstat-no" title="statement not covered" >			maskdata(matrix, reserved, mask);</span>
+		}
+<span class="cstat-no" title="statement not covered" >		mask = bestmask;</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	maskdata(matrix, reserved, mask);</span>
+<span class="cstat-no" title="statement not covered" >	putformatinfo(matrix, reserved, ecclevel, mask);</span>
+<span class="cstat-no" title="statement not covered" >	return matrix;</span>
+};
+&nbsp;
+// the public interface is trivial; the options available are as follows:
+//
+// - version: an integer in [1,40]. when omitted (or -1) the smallest possible
+//   version is chosen.
+// - mode: one of 'numeric', 'alphanumeric', 'octet'. when omitted the smallest
+//   possible mode is chosen.
+// - eccLevel: one of 'L', 'M', 'Q', 'H'. defaults to 'L'.
+// - mask: an integer in [0,7]. when omitted (or -1) the best mask is chosen.
+//
+&nbsp;
+<span class="fstat-no" title="function not covered" >function generateFrame(data, options) {</span>
+<span class="cstat-no" title="statement not covered" >		var MODES = {'numeric': MODE_NUMERIC, 'alphanumeric': MODE_ALPHANUMERIC,</span>
+			'octet': MODE_OCTET};
+<span class="cstat-no" title="statement not covered" >		var ECCLEVELS = {'L': ECCLEVEL_L, 'M': ECCLEVEL_M, 'Q': ECCLEVEL_Q,</span>
+			'H': ECCLEVEL_H};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		options = options || {};</span>
+<span class="cstat-no" title="statement not covered" >		var ver = options.version || -1;</span>
+<span class="cstat-no" title="statement not covered" >		var ecclevel = ECCLEVELS[(options.eccLevel || 'L').toUpperCase()];</span>
+<span class="cstat-no" title="statement not covered" >		var mode = options.mode ? MODES[options.mode.toLowerCase()] : -1;</span>
+<span class="cstat-no" title="statement not covered" >		var mask = 'mask' in options ? options.mask : -1;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if (mode &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >			if (typeof data === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >				if (data.match(NUMERIC_REGEXP)) {</span>
+<span class="cstat-no" title="statement not covered" >					mode = MODE_NUMERIC;</span>
+				} else <span class="cstat-no" title="statement not covered" >if (data.match(ALPHANUMERIC_OUT_REGEXP)) {</span>
+					// while encode supports case-insensitive encoding, we restrict the data to be uppercased when auto-selecting the mode.
+<span class="cstat-no" title="statement not covered" >					mode = MODE_ALPHANUMERIC;</span>
+				} else {
+<span class="cstat-no" title="statement not covered" >					mode = MODE_OCTET;</span>
+				}
+			} else {
+<span class="cstat-no" title="statement not covered" >				mode = MODE_OCTET;</span>
+			}
+		} else <span class="cstat-no" title="statement not covered" >if (!(mode == MODE_NUMERIC || mode == MODE_ALPHANUMERIC ||</span>
+				mode == MODE_OCTET)) {
+<span class="cstat-no" title="statement not covered" >			throw 'invalid or unsupported mode';</span>
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		data = validatedata(mode, data);</span>
+<span class="cstat-no" title="statement not covered" >		if (data === null) <span class="cstat-no" title="statement not covered" >throw 'invalid data format';</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if (ecclevel &lt; 0 || ecclevel &gt; 3) <span class="cstat-no" title="statement not covered" >throw 'invalid ECC level';</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if (ver &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >			for (ver = 1; ver &lt;= 40; ++ver) {</span>
+<span class="cstat-no" title="statement not covered" >				if (data.length &lt;= getmaxdatalen(ver, mode, ecclevel)) <span class="cstat-no" title="statement not covered" >break;</span></span>
+			}
+<span class="cstat-no" title="statement not covered" >			if (ver &gt; 40) <span class="cstat-no" title="statement not covered" >throw 'too large data for the Qr format';</span></span>
+		} else <span class="cstat-no" title="statement not covered" >if (ver &lt; 1 || ver &gt; 40) {</span>
+<span class="cstat-no" title="statement not covered" >			throw 'invalid Qr version! should be between 1 and 40';</span>
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if (mask != -1 &amp;&amp; (mask &lt; 0 || mask &gt; 8)) <span class="cstat-no" title="statement not covered" >throw 'invalid mask';</span></span>
+        //console.log('version:', ver, 'mode:', mode, 'ECC:', ecclevel, 'mask:', mask )
+<span class="cstat-no" title="statement not covered" >		return generate(data, ver, mode, ecclevel, mask);</span>
+	}
+&nbsp;
+&nbsp;
+// options
+// - modulesize: a number. this is a size of each modules in pixels, and
+//   defaults to 5px.
+// - margin: a number. this is a size of margin in *modules*, and defaults to
+//   4 (white modules). the specficiation mandates the margin no less than 4
+//   modules, so it is better not to alter this value unless you know what
+//   you're doing.
+<span class="fstat-no" title="function not covered" >function buildCanvas(data, options) {</span>
+   
+<span class="cstat-no" title="statement not covered" >    var canvas = [];</span>
+<span class="cstat-no" title="statement not covered" >    var background = data.background || '#fff';</span>
+<span class="cstat-no" title="statement not covered" >    var foreground = data.foreground || '#000';</span>
+    //var margin = options.margin || 4;
+<span class="cstat-no" title="statement not covered" >	var matrix = generateFrame(data, options);</span>
+<span class="cstat-no" title="statement not covered" >	var n = matrix.length;</span>
+<span class="cstat-no" title="statement not covered" >	var modSize = Math.floor( options.fit ? options.fit/n : 5 );</span>
+<span class="cstat-no" title="statement not covered" >	var size = n * modSize;</span>
+	
+<span class="cstat-no" title="statement not covered" >    canvas.push({</span>
+      type: 'rect',
+      x: 0, y: 0, w: size, h: size, lineWidth: 0, color: background
+    });
+    
+<span class="cstat-no" title="statement not covered" >	for (var i = 0; i &lt; n; ++i) {</span>
+<span class="cstat-no" title="statement not covered" >		for (var j = 0; j &lt; n; ++j) {</span>
+<span class="cstat-no" title="statement not covered" >            if(matrix[i][j]) {</span>
+<span class="cstat-no" title="statement not covered" >              canvas.push({</span>
+                type: 'rect',
+                x: modSize * i,
+                y: modSize * j,
+                w: modSize,
+                h: modSize,
+                lineWidth: 0,
+                color: foreground
+              });
+            }
+        }
+    }
+    
+<span class="cstat-no" title="statement not covered" >    return {</span>
+        canvas: canvas,
+        size: size
+    };
+		
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function measure(node) {</span>
+<span class="cstat-no" title="statement not covered" >    var cd = buildCanvas(node.qr, node);</span>
+<span class="cstat-no" title="statement not covered" >    node._canvas = cd.canvas;</span>
+<span class="cstat-no" title="statement not covered" >    node._width = node._height = node._minWidth = node._maxWidth = node._minHeight = node._maxHeight = cd.size;</span>
+<span class="cstat-no" title="statement not covered" >    return node;</span>
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = {</span>
+  measure: measure
+};</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 30 2016 20:18:22 GMT+0000 (WET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

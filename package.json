@@ -21,6 +21,8 @@
     "grunt-jsdoc": "^1.1.0",
     "grunt-mocha-cov": "^0.4.0",
     "grunt-text-replace": "^0.4.0",
+    "gulp": "^3.8.11",
+    "gulp-istanbul": "^1.1.1",
     "gulp": "^3.9.1",
     "gulp-coverage": "^0.3.38",
     "gulp-jshint": "^2.0.2",
