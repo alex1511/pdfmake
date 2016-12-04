@@ -5,11 +5,17 @@
 - **Nr. of Test Cases:**
 339 (281 passing / 58 pending)
 - **Coverage:**
-*Statements:* 3,90%
-*Branches:* 0,00%
-*Functions:* 0,00%
-*Lines:* 3,99%
-- **Nr. of Flaky Tests** 0
+  - *Statements:* 3,90%
+  - *Branches:* 0,00%
+  - *Functions:* 0,00%
+  - *Lines:* 3,99%
+- **Nr. of Flaky Tests:** 0
+- **Code Analysis:** Project Certification A (Codacy)
+ - *Code Style* 66%
+ - *Error Prone* 75%
+ - *Unused Code* 99%
+ - *Rest* 100%
+
 
 To analyze the coverage, we installed the 'gulp-istanbul' plugin into the gulp file. We're sceptical about the validity of the coverage report, since it seems very low and says that branches and functions aren't covered at all. But we weren't able to identify any flaw in the installation, and couldn't make other plugins like 'gulp-coverage' to work.
 
