@@ -7,9 +7,9 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var replace = require('gulp-replace');
-var mocha = require('gulp-spawn-mocha');
+var mocha = require('gulp-mocha');
 var jshint = require('gulp-jshint');
-var istanbul = require('gulp-istanbul');
+var cover = require('gulp-coverage');
 
 var uglifyOptions = {
 	preserveComments: 'some',
@@ -41,23 +41,22 @@ function reportWebPackErrors(err, stats) {
   }));
 }
 
-gulp.task('pre-test', function () {
-  return gulp.src(['src/**/*.js'])
-    // Covering files
-    .pipe(istanbul({includeUntested: true}))
-    
-    // Force `require` to return covered files
-    .pipe(istanbul.hookRequire());
-});
+// New Stuff
+// can also try: 'src/**/*.js'
 
-gulp.task('test', ['prepareTestEnv', 'pre-test'],function(cb) {
-	return gulp.src(['test-env/tests/**/*.js'])
-		.pipe(mocha({
-			reporter: 'spec',
-			'check-leaks': true
-		}))
-		.pipe(istanbul.writeReports());
-});
+gulp.task('test', ['prepareTestEnv'], function () {
+        return gulp.src(['test-env/tests/**/*.js'], { read: false })
+                .pipe(cover.instrument({
+                    pattern: ['**/test*'],
+                    debugDirectory: 'debug'
+                }))
+                .pipe(mocha())
+                .pipe(cover.gather())
+                .pipe(cover.format())
+                .pipe(gulp.dest('reports'));
+    });
+
+// *********
 
 gulp.task('prepareTestEnv', ['copy-src-with-exposed-test-methods', 'copy-tests']);
 
