@@ -7,11 +7,9 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var replace = require('gulp-replace');
-var mocha = require('gulp-mocha');
+var mocha = require('gulp-spawn-mocha');
 var jshint = require('gulp-jshint');
 var istanbul = require('gulp-istanbul');
-var cover = require('gulp-coverage');
-
 
 var uglifyOptions = {
 	preserveComments: 'some',
@@ -47,7 +45,7 @@ gulp.task('pre-test', function () {
   return gulp.src(['src/**/*.js'])
     // Covering files
     .pipe(istanbul({includeUntested: true}))
-
+    
     // Force `require` to return covered files
     .pipe(istanbul.hookRequire());
 });
