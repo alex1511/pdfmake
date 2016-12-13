@@ -1,4 +1,5 @@
 #PDFMake#
+[![BCH compliance](https://bettercodehub.com/edge/badge/joaopedrofump/pdfmake-1)](https://bettercodehub.com)
 
 ##Brief Description##
 
