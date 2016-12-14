@@ -45,3 +45,5 @@ There must be a function, which gets called when the token ol or ul is parsed, w
 ####3. How a table of contents lists could be implemented####
 
 To clarify what we mean with a table of content list style, we attached an example image:
+
+The main difference in implementation between the other two list styles and the toc style is, that the function also has to know the 'list number' of the superlist (e.g. superlist number is 2., then the list number of the first item of the sublist has to be 2.1). Therefore a new kind of communciation has to be implemented for the toc style.
