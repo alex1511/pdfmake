@@ -1,0 +1,1229 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/printer.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> printer.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.76% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>11/191</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/131</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.91% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>11/186</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* jslint node: true */
+/* global window */
+'use strict';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >var _ = require('lodash');</span>
+<span class="cstat-no" title="statement not covered" >var FontProvider = require('./fontProvider');</span>
+<span class="cstat-no" title="statement not covered" >var LayoutBuilder = require('./layoutBuilder');</span>
+<span class="cstat-no" title="statement not covered" >var PdfKit = require('pdfkit');</span>
+<span class="cstat-no" title="statement not covered" >var PDFReference = require('pdfkit/js/reference');</span>
+<span class="cstat-no" title="statement not covered" >var sizes = require('./standardPageSizes');</span>
+<span class="cstat-no" title="statement not covered" >var ImageMeasure = require('./imageMeasure');</span>
+<span class="cstat-no" title="statement not covered" >var textDecorator = require('./textDecorator');</span>
+<span class="cstat-no" title="statement not covered" >var FontProvider = require('./fontProvider');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >_.noConflict();</span>
+&nbsp;
+////////////////////////////////////////
+// PdfPrinter
+&nbsp;
+/**
+ * @class Creates an instance of a PdfPrinter which turns document definition into a pdf
+ *
+ * @param {Object} fontDescriptors font definition dictionary
+ *
+ * @example
+ * var fontDescriptors = {
+ *	Roboto: {
+ *		normal: 'fonts/Roboto-Regular.ttf',
+ *		bold: 'fonts/Roboto-Medium.ttf',
+ *		italics: 'fonts/Roboto-Italic.ttf',
+ *		bolditalics: 'fonts/Roboto-Italic.ttf'
+ *	}
+ * };
+ *
+ * var printer = new PdfPrinter(fontDescriptors);
+ */
+<span class="fstat-no" title="function not covered" >function PdfPrinter(fontDescriptors) {</span>
+<span class="cstat-no" title="statement not covered" >	this.fontDescriptors = fontDescriptors;</span>
+}
+&nbsp;
+/**
+ * Executes layout engine for the specified document and renders it into a pdfkit document
+ * ready to be saved.
+ *
+ * @param {Object} docDefinition document definition
+ * @param {Object} docDefinition.content an array describing the pdf structure (for more information take a look at the examples in the /examples folder)
+ * @param {Object} [docDefinition.defaultStyle] default (implicit) style definition
+ * @param {Object} [docDefinition.styles] dictionary defining all styles which can be used in the document
+ * @param {Object} [docDefinition.pageSize] page size (pdfkit units, A4 dimensions by default)
+ * @param {Number} docDefinition.pageSize.width width
+ * @param {Number} docDefinition.pageSize.height height
+ * @param {Object} [docDefinition.pageMargins] page margins (pdfkit units)
+ *
+ * @example
+ *
+ * var docDefinition = {
+ * 	info: {
+ *		title: 'awesome Document',
+ *		author: 'john doe',
+ *		subject: 'subject of document',
+ *		keywords: 'keywords for document',
+ * 	},
+ *	content: [
+ *		'First paragraph',
+ *		'Second paragraph, this time a little bit longer',
+ *		{ text: 'Third paragraph, slightly bigger font size', fontSize: 20 },
+ *		{ text: 'Another paragraph using a named style', style: 'header' },
+ *		{ text: ['playing with ', 'inlines' ] },
+ *		{ text: ['and ', { text: 'restyling ', bold: true }, 'them'] },
+ *	],
+ *	styles: {
+ *		header: { fontSize: 30, bold: true }
+ *	}
+ * }
+ *
+ * var pdfDoc = printer.createPdfKitDocument(docDefinition);
+ *
+ * pdfDoc.pipe(fs.createWriteStream('sample.pdf'));
+ * pdfDoc.end();
+ *
+ * @return {Object} a pdfKit document object which can be saved or encode to data-url
+ */
+<span class="cstat-no" title="statement not covered" >PdfPrinter.prototype.createPdfKitDocument = <span class="fstat-no" title="function not covered" >function(docDefinition, options) {</span></span>
+<span class="cstat-no" title="statement not covered" >	options = options || {};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var pageSize = pageSize2widthAndHeight(docDefinition.pageSize || 'a4');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if(docDefinition.pageOrientation === 'landscape') {</span>
+<span class="cstat-no" title="statement not covered" >    pageSize = { width: pageSize.height, height: pageSize.width};</span>
+  }
+<span class="cstat-no" title="statement not covered" >	pageSize.orientation = docDefinition.pageOrientation === 'landscape' ? docDefinition.pageOrientation : 'portrait';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.pdfKitDoc = new PdfKit({ size: [ pageSize.width, pageSize.height ], compress: false });</span>
+<span class="cstat-no" title="statement not covered" >	this.pdfKitDoc.info.Producer = 'pdfmake';</span>
+<span class="cstat-no" title="statement not covered" >	this.pdfKitDoc.info.Creator = 'pdfmake';</span>
+&nbsp;
+	// pdf kit maintains the uppercase fieldnames from pdf spec
+	// to keep the pdfmake api consistent, the info field are defined lowercase
+<span class="cstat-no" title="statement not covered" >	if(docDefinition.info){</span>
+<span class="cstat-no" title="statement not covered" >		var info = docDefinition.info;</span>
+		// check for falsey an set null, so that pdfkit always get either null or value
+<span class="cstat-no" title="statement not covered" >		this.pdfKitDoc.info.Title = docDefinition.info.title ? docDefinition.info.title : null;</span>
+<span class="cstat-no" title="statement not covered" >		this.pdfKitDoc.info.Author = docDefinition.info.author ? docDefinition.info.author : null;</span>
+<span class="cstat-no" title="statement not covered" >		this.pdfKitDoc.info.Subject = docDefinition.info.subject ? docDefinition.info.subject : null;</span>
+<span class="cstat-no" title="statement not covered" >		this.pdfKitDoc.info.Keywords = docDefinition.info.keywords ? docDefinition.info.keywords : null;</span>
+<span class="cstat-no" title="statement not covered" >		this.pdfKitDoc.info.CreationDate = docDefinition.info.creationDate ? docDefinition.info.creationDate : null;</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	this.fontProvider = new FontProvider(this.fontDescriptors, this.pdfKitDoc);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  docDefinition.images = docDefinition.images || {};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var builder = new LayoutBuilder(</span>
+		pageSize,
+		fixPageMargins(docDefinition.pageMargins || 40),
+        new ImageMeasure(this.pdfKitDoc, docDefinition.images));
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  registerDefaultTableLayouts(builder);</span>
+<span class="cstat-no" title="statement not covered" >  if (options.tableLayouts) {</span>
+<span class="cstat-no" title="statement not covered" >    builder.registerTableLayouts(options.tableLayouts);</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var pages = builder.layoutDocument(docDefinition.content, this.fontProvider, docDefinition.styles || {}, docDefinition.defaultStyle || { fontSize: 12, font: 'Roboto' }, docDefinition.background, docDefinition.header, docDefinition.footer, docDefinition.images, docDefinition.watermark, docDefinition.pageBreakBefore);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	renderPages(pages, this.fontProvider, this.pdfKitDoc);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	if(options.autoPrint){</span>
+<span class="cstat-no" title="statement not covered" >    var printActionRef = this.pdfKitDoc.ref({</span>
+      Type: 'Action',
+      S: 'Named',
+      N: 'Print'
+    });
+<span class="cstat-no" title="statement not covered" >    this.pdfKitDoc._root.data.OpenAction = printActionRef;</span>
+<span class="cstat-no" title="statement not covered" >    printActionRef.end();</span>
+	}
+<span class="cstat-no" title="statement not covered" >	return this.pdfKitDoc;</span>
+};
+&nbsp;
+<span class="fstat-no" title="function not covered" >function fixPageMargins(margin) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!margin) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (typeof margin === 'number' || margin instanceof Number) {</span>
+<span class="cstat-no" title="statement not covered" >        margin = { left: margin, right: margin, top: margin, bottom: margin };</span>
+    } else <span class="cstat-no" title="statement not covered" >if (margin instanceof Array) {</span>
+<span class="cstat-no" title="statement not covered" >        if (margin.length === 2) {</span>
+<span class="cstat-no" title="statement not covered" >            margin = { left: margin[0], top: margin[1], right: margin[0], bottom: margin[1] };</span>
+        } else <span class="cstat-no" title="statement not covered" >if (margin.length === 4) {</span>
+<span class="cstat-no" title="statement not covered" >            margin = { left: margin[0], top: margin[1], right: margin[2], bottom: margin[3] };</span>
+        } else <span class="cstat-no" title="statement not covered" >throw 'Invalid pageMargins definition';</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return margin;</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function registerDefaultTableLayouts(layoutBuilder) {</span>
+<span class="cstat-no" title="statement not covered" >  layoutBuilder.registerTableLayouts({</span>
+    noBorders: {
+      hLineWidth: <span class="fstat-no" title="function not covered" >function(i) {</span> <span class="cstat-no" title="statement not covered" >return 0; </span>},
+      vLineWidth: <span class="fstat-no" title="function not covered" >function(i) {</span> <span class="cstat-no" title="statement not covered" >return 0; </span>},
+      paddingLeft: <span class="fstat-no" title="function not covered" >function(i) {</span> <span class="cstat-no" title="statement not covered" >return i &amp;&amp; 4 || 0; </span>},
+      paddingRight: <span class="fstat-no" title="function not covered" >function(i, node) {</span> <span class="cstat-no" title="statement not covered" >return (i &lt; node.table.widths.length - 1) ? 4 : 0; </span>},
+    },
+    headerLineOnly: {
+      hLineWidth: <span class="fstat-no" title="function not covered" >function(i, node) {</span>
+<span class="cstat-no" title="statement not covered" >        if (i === 0 || i === node.table.body.length) <span class="cstat-no" title="statement not covered" >return 0;</span></span>
+<span class="cstat-no" title="statement not covered" >        return (i === node.table.headerRows) ? 2 : 0;</span>
+      },
+      vLineWidth: <span class="fstat-no" title="function not covered" >function(i) {</span> <span class="cstat-no" title="statement not covered" >return 0; </span>},
+      paddingLeft: <span class="fstat-no" title="function not covered" >function(i) {</span>
+<span class="cstat-no" title="statement not covered" >        return i === 0 ? 0 : 8;</span>
+      },
+      paddingRight: <span class="fstat-no" title="function not covered" >function(i, node) {</span>
+<span class="cstat-no" title="statement not covered" >        return (i === node.table.widths.length - 1) ? 0 : 8;</span>
+      }
+    },
+    lightHorizontalLines: {
+      hLineWidth: <span class="fstat-no" title="function not covered" >function(i, node) {</span>
+<span class="cstat-no" title="statement not covered" >        if (i === 0 || i === node.table.body.length) <span class="cstat-no" title="statement not covered" >return 0;</span></span>
+<span class="cstat-no" title="statement not covered" >        return (i === node.table.headerRows) ? 2 : 1;</span>
+      },
+      vLineWidth: <span class="fstat-no" title="function not covered" >function(i) {</span> <span class="cstat-no" title="statement not covered" >return 0; </span>},
+      hLineColor: <span class="fstat-no" title="function not covered" >function(i) {</span> <span class="cstat-no" title="statement not covered" >return i === 1 ? 'black' : '#aaa'; </span>},
+      paddingLeft: <span class="fstat-no" title="function not covered" >function(i) {</span>
+<span class="cstat-no" title="statement not covered" >        return i === 0 ? 0 : 8;</span>
+      },
+      paddingRight: <span class="fstat-no" title="function not covered" >function(i, node) {</span>
+<span class="cstat-no" title="statement not covered" >        return (i === node.table.widths.length - 1) ? 0 : 8;</span>
+      }
+    }
+  });
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >var defaultLayout = {</span>
+  hLineWidth: <span class="fstat-no" title="function not covered" >function(i, node) {</span> <span class="cstat-no" title="statement not covered" >return 1; </span>}, //return node.table.headerRows &amp;&amp; i === node.table.headerRows &amp;&amp; 3 || 0; },
+  vLineWidth: <span class="fstat-no" title="function not covered" >function(i, node) {</span> <span class="cstat-no" title="statement not covered" >return 1; </span>},
+  hLineColor: <span class="fstat-no" title="function not covered" >function(i, node) {</span> <span class="cstat-no" title="statement not covered" >return 'black'; </span>},
+  vLineColor: <span class="fstat-no" title="function not covered" >function(i, node) {</span> <span class="cstat-no" title="statement not covered" >return 'black'; </span>},
+  paddingLeft: <span class="fstat-no" title="function not covered" >function(i, node) {</span> <span class="cstat-no" title="statement not covered" >return 4; </span>}, //i &amp;&amp; 4 || 0; },
+  paddingRight: <span class="fstat-no" title="function not covered" >function(i, node) {</span> <span class="cstat-no" title="statement not covered" >return 4; </span>}, //(i &lt; node.table.widths.length - 1) ? 4 : 0; },
+  paddingTop: <span class="fstat-no" title="function not covered" >function(i, node) {</span> <span class="cstat-no" title="statement not covered" >return 2; </span>},
+  paddingBottom: <span class="fstat-no" title="function not covered" >function(i, node) {</span> <span class="cstat-no" title="statement not covered" >return 2; </span>}
+};
+&nbsp;
+<span class="fstat-no" title="function not covered" >function pageSize2widthAndHeight(pageSize) {</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof pageSize == 'string' || pageSize instanceof String) {</span>
+<span class="cstat-no" title="statement not covered" >        var size = sizes[pageSize.toUpperCase()];</span>
+<span class="cstat-no" title="statement not covered" >        if (!size) <span class="cstat-no" title="statement not covered" >throw ('Page size ' + pageSize + ' not recognized');</span></span>
+<span class="cstat-no" title="statement not covered" >        return { width: size[0], height: size[1] };</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return pageSize;</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function StringObject(str){</span>
+<span class="cstat-no" title="statement not covered" >	this.isString = true;</span>
+<span class="cstat-no" title="statement not covered" >	this.toString = <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >		return str;</span>
+	};
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function updatePageOrientationInOptions(currentPage, pdfKitDoc) {</span>
+<span class="cstat-no" title="statement not covered" >	var previousPageOrientation = pdfKitDoc.options.size[0] &gt; pdfKitDoc.options.size[1] ? 'landscape' : 'portrait';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	if(currentPage.pageSize.orientation !== previousPageOrientation) {</span>
+<span class="cstat-no" title="statement not covered" >		var width = pdfKitDoc.options.size[0];</span>
+<span class="cstat-no" title="statement not covered" >		var height = pdfKitDoc.options.size[1];</span>
+<span class="cstat-no" title="statement not covered" >		pdfKitDoc.options.size = [height, width];</span>
+	}
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function renderPages(pages, fontProvider, pdfKitDoc) {</span>
+<span class="cstat-no" title="statement not covered" >  pdfKitDoc._pdfMakePages = pages;</span>
+<span class="cstat-no" title="statement not covered" >	for (var i = 0; i &lt; pages.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >		if (i &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >			updatePageOrientationInOptions(pages[i], pdfKitDoc);</span>
+<span class="cstat-no" title="statement not covered" >			pdfKitDoc.addPage(pdfKitDoc.options);</span>
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		var page = pages[i];</span>
+<span class="cstat-no" title="statement not covered" >    for(var ii = 0, il = page.items.length; ii &lt; il; ii++) {</span>
+<span class="cstat-no" title="statement not covered" >        var item = page.items[ii];</span>
+<span class="cstat-no" title="statement not covered" >        switch(item.type) {</span>
+          case 'vector':
+<span class="cstat-no" title="statement not covered" >              renderVector(item.item, pdfKitDoc);</span>
+<span class="cstat-no" title="statement not covered" >              break;</span>
+          case 'line':
+<span class="cstat-no" title="statement not covered" >              renderLine(item.item, item.item.x, item.item.y, pdfKitDoc);</span>
+<span class="cstat-no" title="statement not covered" >              break;</span>
+          case 'image':
+<span class="cstat-no" title="statement not covered" >              renderImage(item.item, item.item.x, item.item.y, pdfKitDoc);</span>
+<span class="cstat-no" title="statement not covered" >              break;</span>
+				}
+    }
+<span class="cstat-no" title="statement not covered" >    if(page.watermark){</span>
+<span class="cstat-no" title="statement not covered" >      renderWatermark(page, pdfKitDoc);</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    fontProvider.setFontRefsToPdfDoc();</span>
+  }
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function renderLine(line, x, y, pdfKitDoc) {</span>
+<span class="cstat-no" title="statement not covered" >	x = x || 0;</span>
+<span class="cstat-no" title="statement not covered" >	y = y || 0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var lineHeight = line.getHeight();</span>
+<span class="cstat-no" title="statement not covered" >	var ascenderHeight = line.getAscenderHeight();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	textDecorator.drawBackground(line, x, y, pdfKitDoc);</span>
+&nbsp;
+	//TODO: line.optimizeInlines();
+<span class="cstat-no" title="statement not covered" >	for(var i = 0, l = line.inlines.length; i &lt; l; i++) {</span>
+<span class="cstat-no" title="statement not covered" >		var inline = line.inlines[i];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		pdfKitDoc.fill(inline.color || 'black');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		pdfKitDoc.save();</span>
+<span class="cstat-no" title="statement not covered" >		pdfKitDoc.transform(1, 0, 0, -1, 0, pdfKitDoc.page.height);</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    var encoded = inline.font.encode(inline.text);</span>
+<span class="cstat-no" title="statement not covered" >		pdfKitDoc.addContent('BT');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		pdfKitDoc.addContent('' + (x + inline.x) + ' ' + (pdfKitDoc.page.height - y - ascenderHeight) + ' Td');</span>
+<span class="cstat-no" title="statement not covered" >		pdfKitDoc.addContent('/' + encoded.fontId + ' ' + inline.fontSize + ' Tf');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        pdfKitDoc.addContent('&lt;' + encoded.encodedText + '&gt; Tj');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		pdfKitDoc.addContent('ET');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		if (inline.link) {</span>
+<span class="cstat-no" title="statement not covered" >			pdfKitDoc.link(x + inline.x, pdfKitDoc.page.height - y - lineHeight, inline.width, lineHeight, inline.link);</span>
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		pdfKitDoc.restore();</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	textDecorator.drawDecorations(line, x, y, pdfKitDoc);</span>
+&nbsp;
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function renderWatermark(page, pdfKitDoc){</span>
+<span class="cstat-no" title="statement not covered" >	var watermark = page.watermark;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	pdfKitDoc.fill('black');</span>
+<span class="cstat-no" title="statement not covered" >	pdfKitDoc.opacity(0.6);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	pdfKitDoc.save();</span>
+<span class="cstat-no" title="statement not covered" >	pdfKitDoc.transform(1, 0, 0, -1, 0, pdfKitDoc.page.height);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	var angle = Math.atan2(pdfKitDoc.page.height, pdfKitDoc.page.width) * 180/Math.PI;</span>
+<span class="cstat-no" title="statement not covered" >	pdfKitDoc.rotate(angle, {origin: [pdfKitDoc.page.width/2, pdfKitDoc.page.height/2]});</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  var encoded = watermark.font.encode(watermark.text);</span>
+<span class="cstat-no" title="statement not covered" >	pdfKitDoc.addContent('BT');</span>
+<span class="cstat-no" title="statement not covered" >	pdfKitDoc.addContent('' + (pdfKitDoc.page.width/2 - watermark.size.size.width/2) + ' ' + (pdfKitDoc.page.height/2 - watermark.size.size.height/4) + ' Td');</span>
+<span class="cstat-no" title="statement not covered" >	pdfKitDoc.addContent('/' + encoded.fontId + ' ' + watermark.size.fontSize + ' Tf');</span>
+<span class="cstat-no" title="statement not covered" >	pdfKitDoc.addContent('&lt;' + encoded.encodedText + '&gt; Tj');</span>
+<span class="cstat-no" title="statement not covered" >	pdfKitDoc.addContent('ET');</span>
+<span class="cstat-no" title="statement not covered" >	pdfKitDoc.restore();</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function renderVector(vector, pdfDoc) {</span>
+	//TODO: pdf optimization (there's no need to write all properties everytime)
+<span class="cstat-no" title="statement not covered" >	pdfDoc.lineWidth(vector.lineWidth || 1);</span>
+<span class="cstat-no" title="statement not covered" >	if (vector.dash) {</span>
+<span class="cstat-no" title="statement not covered" >		pdfDoc.dash(vector.dash.length, { space: vector.dash.space || vector.dash.length });</span>
+	} else {
+<span class="cstat-no" title="statement not covered" >		pdfDoc.undash();</span>
+	}
+<span class="cstat-no" title="statement not covered" >	pdfDoc.fillOpacity(vector.fillOpacity || 1);</span>
+<span class="cstat-no" title="statement not covered" >	pdfDoc.strokeOpacity(vector.strokeOpacity || 1);</span>
+<span class="cstat-no" title="statement not covered" >	pdfDoc.lineJoin(vector.lineJoin || 'miter');</span>
+&nbsp;
+	//TODO: clipping
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	switch(vector.type) {</span>
+		case 'ellipse':
+<span class="cstat-no" title="statement not covered" >			pdfDoc.ellipse(vector.x, vector.y, vector.r1, vector.r2);</span>
+<span class="cstat-no" title="statement not covered" >			break;</span>
+		case 'rect':
+<span class="cstat-no" title="statement not covered" >			if (vector.r) {</span>
+<span class="cstat-no" title="statement not covered" >				pdfDoc.roundedRect(vector.x, vector.y, vector.w, vector.h, vector.r);</span>
+			} else {
+<span class="cstat-no" title="statement not covered" >				pdfDoc.rect(vector.x, vector.y, vector.w, vector.h);</span>
+			}
+<span class="cstat-no" title="statement not covered" >			break;</span>
+		case 'line':
+<span class="cstat-no" title="statement not covered" >			pdfDoc.moveTo(vector.x1, vector.y1);</span>
+<span class="cstat-no" title="statement not covered" >			pdfDoc.lineTo(vector.x2, vector.y2);</span>
+<span class="cstat-no" title="statement not covered" >			break;</span>
+		case 'polyline':
+<span class="cstat-no" title="statement not covered" >			if (vector.points.length === 0) <span class="cstat-no" title="statement not covered" >break;</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			pdfDoc.moveTo(vector.points[0].x, vector.points[0].y);</span>
+<span class="cstat-no" title="statement not covered" >			for(var i = 1, l = vector.points.length; i &lt; l; i++) {</span>
+<span class="cstat-no" title="statement not covered" >				pdfDoc.lineTo(vector.points[i].x, vector.points[i].y);</span>
+			}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			if (vector.points.length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >				var p1 = vector.points[0];</span>
+<span class="cstat-no" title="statement not covered" >				var pn = vector.points[vector.points.length - 1];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >				if (vector.closePath || p1.x === pn.x &amp;&amp; p1.y === pn.y) {</span>
+<span class="cstat-no" title="statement not covered" >					pdfDoc.closePath();</span>
+				}
+			}
+<span class="cstat-no" title="statement not covered" >			break;</span>
+	}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	if (vector.color &amp;&amp; vector.lineColor) {</span>
+<span class="cstat-no" title="statement not covered" >		pdfDoc.fillAndStroke(vector.color, vector.lineColor);</span>
+	} else <span class="cstat-no" title="statement not covered" >if (vector.color) {</span>
+<span class="cstat-no" title="statement not covered" >		pdfDoc.fill(vector.color);</span>
+	} else {
+<span class="cstat-no" title="statement not covered" >		pdfDoc.stroke(vector.lineColor || 'black');</span>
+	}
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function renderImage(image, x, y, pdfKitDoc) {</span>
+<span class="cstat-no" title="statement not covered" >    pdfKitDoc.image(image.image, image.x, image.y, { width: image._width, height: image._height });</span>
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = PdfPrinter;</span>
+&nbsp;
+&nbsp;
+/* temporary browser extension */
+<span class="cstat-no" title="statement not covered" >PdfPrinter.prototype.fs = require('fs');</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Dec 04 2016 22:39:32 GMT+0100 (CET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
